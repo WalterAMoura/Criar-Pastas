@@ -2,33 +2,21 @@ import os
 import json
 import shutil
 from datetime import datetime
+from unidecode import unidecode
 import locale
 
 def copy_files(source_path, destination_path):
-    shutil.copy(source_path, destination_path)
+    shutil.copy2(source_path, destination_path)
 
-def copy_config_files(root_path):
-    config_path = os.path.join(os.path.dirname(__file__), 'config.json')
-
-    with open(config_path) as file:
-        config = json.load(file)
-
-    for entry in config:
-        source_path = entry['source']
-        destination_path = os.path.join(root_path, entry['destination'])
+def copy_config_files(root_path, config):
+    for entry in config['filesCopy']:
+        source_path = os.path.join(entry['source'], entry['fileName'])
+        destination_path = os.path.join(root_path, entry['destination'], entry['fileName'])
 
         copy_files(source_path, destination_path)
 
-def create_subfolders(root_path):
-    subfolders = [
-        '01 - ESCOLA SABATINA',
-        '02 - ANÚNCIOS',
-        '03 - SAÚDE',
-        '04 - PROVAI E VEDE',
-        '05 - MENSAGEM MUSICAL',
-        '06 - CULTO DIVINO',
-        '07 - FUNDO MUSICAL'
-    ]
+def create_subfolders(root_path, subfolders):
+    os.makedirs(root_path, exist_ok=True)
 
     for subfolder in subfolders:
         subfolder_path = os.path.join(root_path, subfolder)
@@ -42,14 +30,21 @@ def main():
     now = datetime.now()
     formatted_date = now.strftime('%A %d DE %B %Y').upper()
 
-    # Crie a pasta raiz com a data formatada
-    root_path = os.path.join('C:\\Users\\walte\\Desktop', formatted_date)
+    # Carregue as informações do arquivo de configuração
+    config_path = os.path.join(os.path.dirname(__file__), 'config.json')
+    with open(config_path) as file:
+        config = json.load(file)
+
+    # Obtenha o diretório raiz e normalize o nome removendo a acentuação
+    root_path = os.path.join(config['rootPath'], formatted_date)
+    root_path_normalized = unidecode(root_path)
 
     # Crie as subpastas
-    create_subfolders(root_path)
+    subfolders = config['subFolders']
+    create_subfolders(root_path_normalized, subfolders)
 
     # Copie os arquivos de configuração
-    copy_config_files(root_path)
+    copy_config_files(root_path_normalized, config)
 
     print('Estrutura de pastas criada com sucesso!')
 

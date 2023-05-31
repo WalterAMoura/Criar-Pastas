@@ -26,6 +26,7 @@ imports:
  &#8226;   <a href="#collections">collections</a>
  &#8226;   <a href="#collections.abc">collections.abc</a>
  &#8226;   <a href="#copyreg">copyreg</a>
+ &#8226;   <a href="#datetime">datetime</a>
  &#8226;   <a href="#encodings">encodings</a>
  &#8226;   <a href="#encodings.aliases">encodings.aliases</a>
  &#8226;   <a href="#encodings.ascii">encodings.ascii</a>
@@ -155,6 +156,7 @@ imports:
  &#8226;   <a href="#genericpath">genericpath</a>
  &#8226;   <a href="#heapq">heapq</a>
  &#8226;   <a href="#io">io</a>
+ &#8226;   <a href="#json">json</a>
  &#8226;   <a href="#keyword">keyword</a>
  &#8226;   <a href="#linecache">linecache</a>
  &#8226;   <a href="#locale">locale</a>
@@ -170,11 +172,11 @@ imports:
  &#8226;   <a href="#sre_constants">sre_constants</a>
  &#8226;   <a href="#sre_parse">sre_parse</a>
  &#8226;   <a href="#stat">stat</a>
- &#8226;   <a href="#time">time</a>
  &#8226;   <a href="#token">token</a>
  &#8226;   <a href="#tokenize">tokenize</a>
  &#8226;   <a href="#traceback">traceback</a>
  &#8226;   <a href="#types">types</a>
+ &#8226;   <a href="#unidecode">unidecode</a>
  &#8226;   <a href="#urllib">urllib</a>
  &#8226;   <a href="#urllib.error">urllib.error</a>
  &#8226;   <a href="#urllib.parse">urllib.parse</a>
@@ -193,7 +195,7 @@ imports:
   <a target="code" href="" type="text/plain"><tt>'org.python'</tt></a>
 <span class="moduletype">MissingModule</span>  <div class="import">
 imported by:
-    <a href="#pickle">pickle</a>
+    <a href="#copy">copy</a>
 
   </div>
 
@@ -511,6 +513,23 @@ imported by:
   <tt>_io</tt> <span class="moduletype"><i>(builtin module)</i></span>  <div class="import">
 imported by:
     <a href="#io">io</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="_json"></a>
+  <tt>_json</tt> <span class="moduletype"><i>(builtin module)</i></span>  <div class="import">
+imports:
+    <a href="#json.decoder">json.decoder</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#json.decoder">json.decoder</a>
+ &#8226;   <a href="#json.encoder">json.encoder</a>
+ &#8226;   <a href="#json.scanner">json.scanner</a>
 
   </div>
 
@@ -949,6 +968,7 @@ imported by:
  &#8226;   <a href="#gzip">gzip</a>
  &#8226;   <a href="#tarfile">tarfile</a>
  &#8226;   <a href="#tokenize">tokenize</a>
+ &#8226;   <a href="#unidecode.util">unidecode.util</a>
  &#8226;   <a href="#zipfile">zipfile</a>
 
   </div>
@@ -1233,6 +1253,7 @@ imported by:
  &#8226;   <a href="#encodings.utf_8_sig">encodings.utf_8_sig</a>
  &#8226;   <a href="#encodings.uu_codec">encodings.uu_codec</a>
  &#8226;   <a href="#encodings.zlib_codec">encodings.zlib_codec</a>
+ &#8226;   <a href="#json">json</a>
  &#8226;   <a href="#main.py">main.py</a>
  &#8226;   <a href="#pickle">pickle</a>
  &#8226;   <a href="#tokenize">tokenize</a>
@@ -1366,8 +1387,8 @@ imported by:
   <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/copy.py" type="text/plain"><tt>copy</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
 imports:
-    <a href="#copyreg">copyreg</a>
- &#8226;   <a href="#org">org</a>
+    <a href="#'org.python'">'org.python'</a>
+ &#8226;   <a href="#copyreg">copyreg</a>
  &#8226;   <a href="#types">types</a>
  &#8226;   <a href="#weakref">weakref</a>
 
@@ -1439,6 +1460,7 @@ imported by:
  &#8226;   <a href="#calendar">calendar</a>
  &#8226;   <a href="#email.utils">email.utils</a>
  &#8226;   <a href="#http.cookiejar">http.cookiejar</a>
+ &#8226;   <a href="#main.py">main.py</a>
 
   </div>
 
@@ -5039,6 +5061,7 @@ imported by:
  &#8226;   <a href="#tarfile">tarfile</a>
  &#8226;   <a href="#tempfile">tempfile</a>
  &#8226;   <a href="#tokenize">tokenize</a>
+ &#8226;   <a href="#unidecode.util">unidecode.util</a>
  &#8226;   <a href="#urllib.request">urllib.request</a>
  &#8226;   <a href="#zipfile">zipfile</a>
 
@@ -5062,6 +5085,86 @@ imported by:
  &#8226;   <a href="#traceback">traceback</a>
  &#8226;   <a href="#weakref">weakref</a>
  &#8226;   <a href="#zipfile">zipfile</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="json"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/json/__init__.py" type="text/plain"><tt>json</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#codecs">codecs</a>
+ &#8226;   <a href="#json.decoder">json.decoder</a>
+ &#8226;   <a href="#json.encoder">json.encoder</a>
+ &#8226;   <a href="#json.scanner">json.scanner</a>
+ &#8226;   <a href="#warnings">warnings</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#json.decoder">json.decoder</a>
+ &#8226;   <a href="#json.encoder">json.encoder</a>
+ &#8226;   <a href="#json.scanner">json.scanner</a>
+ &#8226;   <a href="#main.py">main.py</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="json.decoder"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/json/decoder.py" type="text/plain"><tt>json.decoder</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#_json">_json</a>
+ &#8226;   <a href="#json">json</a>
+ &#8226;   <a href="#json.scanner">json.scanner</a>
+ &#8226;   <a href="#re">re</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#_json">_json</a>
+ &#8226;   <a href="#json">json</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="json.encoder"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/json/encoder.py" type="text/plain"><tt>json.encoder</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#_json">_json</a>
+ &#8226;   <a href="#json">json</a>
+ &#8226;   <a href="#re">re</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#json">json</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="json.scanner"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/json/scanner.py" type="text/plain"><tt>json.scanner</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#_json">_json</a>
+ &#8226;   <a href="#json">json</a>
+ &#8226;   <a href="#re">re</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#json">json</a>
+ &#8226;   <a href="#json.decoder">json.decoder</a>
 
   </div>
 
@@ -5126,6 +5229,7 @@ imported by:
  &#8226;   <a href="#calendar">calendar</a>
  &#8226;   <a href="#gettext">gettext</a>
  &#8226;   <a href="#main.py">main.py</a>
+ &#8226;   <a href="#unidecode.util">unidecode.util</a>
 
   </div>
 
@@ -5365,7 +5469,7 @@ imported by:
   <a target="code" href="" type="text/plain"><tt>org</tt></a>
 <span class="moduletype">MissingModule</span>  <div class="import">
 imported by:
-    <a href="#copy">copy</a>
+    <a href="#pickle">pickle</a>
 
   </div>
 
@@ -5426,6 +5530,7 @@ imported by:
  &#8226;   <a href="#tarfile">tarfile</a>
  &#8226;   <a href="#tempfile">tempfile</a>
  &#8226;   <a href="#threading">threading</a>
+ &#8226;   <a href="#unidecode.util">unidecode.util</a>
  &#8226;   <a href="#urllib.request">urllib.request</a>
  &#8226;   <a href="#uu">uu</a>
  &#8226;   <a href="#zipfile">zipfile</a>
@@ -5471,14 +5576,14 @@ imported by:
   <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/pickle.py" type="text/plain"><tt>pickle</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
 imports:
-    <a href="#'org.python'">'org.python'</a>
- &#8226;   <a href="#_compat_pickle">_compat_pickle</a>
+    <a href="#_compat_pickle">_compat_pickle</a>
  &#8226;   <a href="#_pickle">_pickle</a>
  &#8226;   <a href="#codecs">codecs</a>
  &#8226;   <a href="#copyreg">copyreg</a>
  &#8226;   <a href="#functools">functools</a>
  &#8226;   <a href="#io">io</a>
  &#8226;   <a href="#itertools">itertools</a>
+ &#8226;   <a href="#org">org</a>
  &#8226;   <a href="#pprint">pprint</a>
  &#8226;   <a href="#re">re</a>
  &#8226;   <a href="#struct">struct</a>
@@ -5686,6 +5791,9 @@ imported by:
  &#8226;   <a href="#http.client">http.client</a>
  &#8226;   <a href="#http.cookiejar">http.cookiejar</a>
  &#8226;   <a href="#importlib.metadata">importlib.metadata</a>
+ &#8226;   <a href="#json.decoder">json.decoder</a>
+ &#8226;   <a href="#json.encoder">json.encoder</a>
+ &#8226;   <a href="#json.scanner">json.scanner</a>
  &#8226;   <a href="#locale">locale</a>
  &#8226;   <a href="#logging">logging</a>
  &#8226;   <a href="#main.py">main.py</a>
@@ -6131,6 +6239,7 @@ imported by:
  &#8226;   <a href="#traceback">traceback</a>
  &#8226;   <a href="#types">types</a>
  &#8226;   <a href="#typing">typing</a>
+ &#8226;   <a href="#unidecode.util">unidecode.util</a>
  &#8226;   <a href="#urllib.parse">urllib.parse</a>
  &#8226;   <a href="#urllib.request">urllib.request</a>
  &#8226;   <a href="#uu">uu</a>
@@ -6278,7 +6387,6 @@ imported by:
  &#8226;   <a href="#gzip">gzip</a>
  &#8226;   <a href="#http.cookiejar">http.cookiejar</a>
  &#8226;   <a href="#logging">logging</a>
- &#8226;   <a href="#main.py">main.py</a>
  &#8226;   <a href="#pprint">pprint</a>
  &#8226;   <a href="#random">random</a>
  &#8226;   <a href="#ssl">ssl</a>
@@ -6425,6 +6533,7 @@ imports:
   <div class="import">
 imported by:
     <a href="#functools">functools</a>
+ &#8226;   <a href="#unidecode">unidecode</a>
 
   </div>
 
@@ -6438,6 +6547,3488 @@ imported by:
  &#8226;   <a href="#sre_parse">sre_parse</a>
  &#8226;   <a href="#stringprep">stringprep</a>
  &#8226;   <a href="#urllib.parse">urllib.parse</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/__init__.py" type="text/plain"><tt>unidecode</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#typing">typing</a>
+ &#8226;   <a href="#unidecode">unidecode</a>
+ &#8226;   <a href="#unidecode.__main__">unidecode.__main__</a>
+ &#8226;   <a href="#unidecode.util">unidecode.util</a>
+ &#8226;   <a href="#unidecode.x000">unidecode.x000</a>
+ &#8226;   <a href="#unidecode.x001">unidecode.x001</a>
+ &#8226;   <a href="#unidecode.x002">unidecode.x002</a>
+ &#8226;   <a href="#unidecode.x003">unidecode.x003</a>
+ &#8226;   <a href="#unidecode.x004">unidecode.x004</a>
+ &#8226;   <a href="#unidecode.x005">unidecode.x005</a>
+ &#8226;   <a href="#unidecode.x006">unidecode.x006</a>
+ &#8226;   <a href="#unidecode.x007">unidecode.x007</a>
+ &#8226;   <a href="#unidecode.x009">unidecode.x009</a>
+ &#8226;   <a href="#unidecode.x00a">unidecode.x00a</a>
+ &#8226;   <a href="#unidecode.x00b">unidecode.x00b</a>
+ &#8226;   <a href="#unidecode.x00c">unidecode.x00c</a>
+ &#8226;   <a href="#unidecode.x00d">unidecode.x00d</a>
+ &#8226;   <a href="#unidecode.x00e">unidecode.x00e</a>
+ &#8226;   <a href="#unidecode.x00f">unidecode.x00f</a>
+ &#8226;   <a href="#unidecode.x010">unidecode.x010</a>
+ &#8226;   <a href="#unidecode.x011">unidecode.x011</a>
+ &#8226;   <a href="#unidecode.x012">unidecode.x012</a>
+ &#8226;   <a href="#unidecode.x013">unidecode.x013</a>
+ &#8226;   <a href="#unidecode.x014">unidecode.x014</a>
+ &#8226;   <a href="#unidecode.x015">unidecode.x015</a>
+ &#8226;   <a href="#unidecode.x016">unidecode.x016</a>
+ &#8226;   <a href="#unidecode.x017">unidecode.x017</a>
+ &#8226;   <a href="#unidecode.x018">unidecode.x018</a>
+ &#8226;   <a href="#unidecode.x01d">unidecode.x01d</a>
+ &#8226;   <a href="#unidecode.x01e">unidecode.x01e</a>
+ &#8226;   <a href="#unidecode.x01f">unidecode.x01f</a>
+ &#8226;   <a href="#unidecode.x020">unidecode.x020</a>
+ &#8226;   <a href="#unidecode.x021">unidecode.x021</a>
+ &#8226;   <a href="#unidecode.x022">unidecode.x022</a>
+ &#8226;   <a href="#unidecode.x023">unidecode.x023</a>
+ &#8226;   <a href="#unidecode.x024">unidecode.x024</a>
+ &#8226;   <a href="#unidecode.x025">unidecode.x025</a>
+ &#8226;   <a href="#unidecode.x026">unidecode.x026</a>
+ &#8226;   <a href="#unidecode.x027">unidecode.x027</a>
+ &#8226;   <a href="#unidecode.x028">unidecode.x028</a>
+ &#8226;   <a href="#unidecode.x029">unidecode.x029</a>
+ &#8226;   <a href="#unidecode.x02a">unidecode.x02a</a>
+ &#8226;   <a href="#unidecode.x02c">unidecode.x02c</a>
+ &#8226;   <a href="#unidecode.x02e">unidecode.x02e</a>
+ &#8226;   <a href="#unidecode.x02f">unidecode.x02f</a>
+ &#8226;   <a href="#unidecode.x030">unidecode.x030</a>
+ &#8226;   <a href="#unidecode.x031">unidecode.x031</a>
+ &#8226;   <a href="#unidecode.x032">unidecode.x032</a>
+ &#8226;   <a href="#unidecode.x033">unidecode.x033</a>
+ &#8226;   <a href="#unidecode.x04d">unidecode.x04d</a>
+ &#8226;   <a href="#unidecode.x04e">unidecode.x04e</a>
+ &#8226;   <a href="#unidecode.x04f">unidecode.x04f</a>
+ &#8226;   <a href="#unidecode.x050">unidecode.x050</a>
+ &#8226;   <a href="#unidecode.x051">unidecode.x051</a>
+ &#8226;   <a href="#unidecode.x052">unidecode.x052</a>
+ &#8226;   <a href="#unidecode.x053">unidecode.x053</a>
+ &#8226;   <a href="#unidecode.x054">unidecode.x054</a>
+ &#8226;   <a href="#unidecode.x055">unidecode.x055</a>
+ &#8226;   <a href="#unidecode.x056">unidecode.x056</a>
+ &#8226;   <a href="#unidecode.x057">unidecode.x057</a>
+ &#8226;   <a href="#unidecode.x058">unidecode.x058</a>
+ &#8226;   <a href="#unidecode.x059">unidecode.x059</a>
+ &#8226;   <a href="#unidecode.x05a">unidecode.x05a</a>
+ &#8226;   <a href="#unidecode.x05b">unidecode.x05b</a>
+ &#8226;   <a href="#unidecode.x05c">unidecode.x05c</a>
+ &#8226;   <a href="#unidecode.x05d">unidecode.x05d</a>
+ &#8226;   <a href="#unidecode.x05e">unidecode.x05e</a>
+ &#8226;   <a href="#unidecode.x05f">unidecode.x05f</a>
+ &#8226;   <a href="#unidecode.x060">unidecode.x060</a>
+ &#8226;   <a href="#unidecode.x061">unidecode.x061</a>
+ &#8226;   <a href="#unidecode.x062">unidecode.x062</a>
+ &#8226;   <a href="#unidecode.x063">unidecode.x063</a>
+ &#8226;   <a href="#unidecode.x064">unidecode.x064</a>
+ &#8226;   <a href="#unidecode.x065">unidecode.x065</a>
+ &#8226;   <a href="#unidecode.x066">unidecode.x066</a>
+ &#8226;   <a href="#unidecode.x067">unidecode.x067</a>
+ &#8226;   <a href="#unidecode.x068">unidecode.x068</a>
+ &#8226;   <a href="#unidecode.x069">unidecode.x069</a>
+ &#8226;   <a href="#unidecode.x06a">unidecode.x06a</a>
+ &#8226;   <a href="#unidecode.x06b">unidecode.x06b</a>
+ &#8226;   <a href="#unidecode.x06c">unidecode.x06c</a>
+ &#8226;   <a href="#unidecode.x06d">unidecode.x06d</a>
+ &#8226;   <a href="#unidecode.x06e">unidecode.x06e</a>
+ &#8226;   <a href="#unidecode.x06f">unidecode.x06f</a>
+ &#8226;   <a href="#unidecode.x070">unidecode.x070</a>
+ &#8226;   <a href="#unidecode.x071">unidecode.x071</a>
+ &#8226;   <a href="#unidecode.x072">unidecode.x072</a>
+ &#8226;   <a href="#unidecode.x073">unidecode.x073</a>
+ &#8226;   <a href="#unidecode.x074">unidecode.x074</a>
+ &#8226;   <a href="#unidecode.x075">unidecode.x075</a>
+ &#8226;   <a href="#unidecode.x076">unidecode.x076</a>
+ &#8226;   <a href="#unidecode.x077">unidecode.x077</a>
+ &#8226;   <a href="#unidecode.x078">unidecode.x078</a>
+ &#8226;   <a href="#unidecode.x079">unidecode.x079</a>
+ &#8226;   <a href="#unidecode.x07a">unidecode.x07a</a>
+ &#8226;   <a href="#unidecode.x07b">unidecode.x07b</a>
+ &#8226;   <a href="#unidecode.x07c">unidecode.x07c</a>
+ &#8226;   <a href="#unidecode.x07d">unidecode.x07d</a>
+ &#8226;   <a href="#unidecode.x07e">unidecode.x07e</a>
+ &#8226;   <a href="#unidecode.x07f">unidecode.x07f</a>
+ &#8226;   <a href="#unidecode.x080">unidecode.x080</a>
+ &#8226;   <a href="#unidecode.x081">unidecode.x081</a>
+ &#8226;   <a href="#unidecode.x082">unidecode.x082</a>
+ &#8226;   <a href="#unidecode.x083">unidecode.x083</a>
+ &#8226;   <a href="#unidecode.x084">unidecode.x084</a>
+ &#8226;   <a href="#unidecode.x085">unidecode.x085</a>
+ &#8226;   <a href="#unidecode.x086">unidecode.x086</a>
+ &#8226;   <a href="#unidecode.x087">unidecode.x087</a>
+ &#8226;   <a href="#unidecode.x088">unidecode.x088</a>
+ &#8226;   <a href="#unidecode.x089">unidecode.x089</a>
+ &#8226;   <a href="#unidecode.x08a">unidecode.x08a</a>
+ &#8226;   <a href="#unidecode.x08b">unidecode.x08b</a>
+ &#8226;   <a href="#unidecode.x08c">unidecode.x08c</a>
+ &#8226;   <a href="#unidecode.x08d">unidecode.x08d</a>
+ &#8226;   <a href="#unidecode.x08e">unidecode.x08e</a>
+ &#8226;   <a href="#unidecode.x08f">unidecode.x08f</a>
+ &#8226;   <a href="#unidecode.x090">unidecode.x090</a>
+ &#8226;   <a href="#unidecode.x091">unidecode.x091</a>
+ &#8226;   <a href="#unidecode.x092">unidecode.x092</a>
+ &#8226;   <a href="#unidecode.x093">unidecode.x093</a>
+ &#8226;   <a href="#unidecode.x094">unidecode.x094</a>
+ &#8226;   <a href="#unidecode.x095">unidecode.x095</a>
+ &#8226;   <a href="#unidecode.x096">unidecode.x096</a>
+ &#8226;   <a href="#unidecode.x097">unidecode.x097</a>
+ &#8226;   <a href="#unidecode.x098">unidecode.x098</a>
+ &#8226;   <a href="#unidecode.x099">unidecode.x099</a>
+ &#8226;   <a href="#unidecode.x09a">unidecode.x09a</a>
+ &#8226;   <a href="#unidecode.x09b">unidecode.x09b</a>
+ &#8226;   <a href="#unidecode.x09c">unidecode.x09c</a>
+ &#8226;   <a href="#unidecode.x09d">unidecode.x09d</a>
+ &#8226;   <a href="#unidecode.x09e">unidecode.x09e</a>
+ &#8226;   <a href="#unidecode.x09f">unidecode.x09f</a>
+ &#8226;   <a href="#unidecode.x0a0">unidecode.x0a0</a>
+ &#8226;   <a href="#unidecode.x0a1">unidecode.x0a1</a>
+ &#8226;   <a href="#unidecode.x0a2">unidecode.x0a2</a>
+ &#8226;   <a href="#unidecode.x0a3">unidecode.x0a3</a>
+ &#8226;   <a href="#unidecode.x0a4">unidecode.x0a4</a>
+ &#8226;   <a href="#unidecode.x0ac">unidecode.x0ac</a>
+ &#8226;   <a href="#unidecode.x0ad">unidecode.x0ad</a>
+ &#8226;   <a href="#unidecode.x0ae">unidecode.x0ae</a>
+ &#8226;   <a href="#unidecode.x0af">unidecode.x0af</a>
+ &#8226;   <a href="#unidecode.x0b0">unidecode.x0b0</a>
+ &#8226;   <a href="#unidecode.x0b1">unidecode.x0b1</a>
+ &#8226;   <a href="#unidecode.x0b2">unidecode.x0b2</a>
+ &#8226;   <a href="#unidecode.x0b3">unidecode.x0b3</a>
+ &#8226;   <a href="#unidecode.x0b4">unidecode.x0b4</a>
+ &#8226;   <a href="#unidecode.x0b5">unidecode.x0b5</a>
+ &#8226;   <a href="#unidecode.x0b6">unidecode.x0b6</a>
+ &#8226;   <a href="#unidecode.x0b7">unidecode.x0b7</a>
+ &#8226;   <a href="#unidecode.x0b8">unidecode.x0b8</a>
+ &#8226;   <a href="#unidecode.x0b9">unidecode.x0b9</a>
+ &#8226;   <a href="#unidecode.x0ba">unidecode.x0ba</a>
+ &#8226;   <a href="#unidecode.x0bb">unidecode.x0bb</a>
+ &#8226;   <a href="#unidecode.x0bc">unidecode.x0bc</a>
+ &#8226;   <a href="#unidecode.x0bd">unidecode.x0bd</a>
+ &#8226;   <a href="#unidecode.x0be">unidecode.x0be</a>
+ &#8226;   <a href="#unidecode.x0bf">unidecode.x0bf</a>
+ &#8226;   <a href="#unidecode.x0c0">unidecode.x0c0</a>
+ &#8226;   <a href="#unidecode.x0c1">unidecode.x0c1</a>
+ &#8226;   <a href="#unidecode.x0c2">unidecode.x0c2</a>
+ &#8226;   <a href="#unidecode.x0c3">unidecode.x0c3</a>
+ &#8226;   <a href="#unidecode.x0c4">unidecode.x0c4</a>
+ &#8226;   <a href="#unidecode.x0c5">unidecode.x0c5</a>
+ &#8226;   <a href="#unidecode.x0c6">unidecode.x0c6</a>
+ &#8226;   <a href="#unidecode.x0c7">unidecode.x0c7</a>
+ &#8226;   <a href="#unidecode.x0c8">unidecode.x0c8</a>
+ &#8226;   <a href="#unidecode.x0c9">unidecode.x0c9</a>
+ &#8226;   <a href="#unidecode.x0ca">unidecode.x0ca</a>
+ &#8226;   <a href="#unidecode.x0cb">unidecode.x0cb</a>
+ &#8226;   <a href="#unidecode.x0cc">unidecode.x0cc</a>
+ &#8226;   <a href="#unidecode.x0cd">unidecode.x0cd</a>
+ &#8226;   <a href="#unidecode.x0ce">unidecode.x0ce</a>
+ &#8226;   <a href="#unidecode.x0cf">unidecode.x0cf</a>
+ &#8226;   <a href="#unidecode.x0d0">unidecode.x0d0</a>
+ &#8226;   <a href="#unidecode.x0d1">unidecode.x0d1</a>
+ &#8226;   <a href="#unidecode.x0d2">unidecode.x0d2</a>
+ &#8226;   <a href="#unidecode.x0d3">unidecode.x0d3</a>
+ &#8226;   <a href="#unidecode.x0d4">unidecode.x0d4</a>
+ &#8226;   <a href="#unidecode.x0d5">unidecode.x0d5</a>
+ &#8226;   <a href="#unidecode.x0d6">unidecode.x0d6</a>
+ &#8226;   <a href="#unidecode.x0d7">unidecode.x0d7</a>
+ &#8226;   <a href="#unidecode.x0f9">unidecode.x0f9</a>
+ &#8226;   <a href="#unidecode.x0fa">unidecode.x0fa</a>
+ &#8226;   <a href="#unidecode.x0fb">unidecode.x0fb</a>
+ &#8226;   <a href="#unidecode.x0fc">unidecode.x0fc</a>
+ &#8226;   <a href="#unidecode.x0fd">unidecode.x0fd</a>
+ &#8226;   <a href="#unidecode.x0fe">unidecode.x0fe</a>
+ &#8226;   <a href="#unidecode.x0ff">unidecode.x0ff</a>
+ &#8226;   <a href="#unidecode.x1d4">unidecode.x1d4</a>
+ &#8226;   <a href="#unidecode.x1d5">unidecode.x1d5</a>
+ &#8226;   <a href="#unidecode.x1d6">unidecode.x1d6</a>
+ &#8226;   <a href="#unidecode.x1d7">unidecode.x1d7</a>
+ &#8226;   <a href="#unidecode.x1f1">unidecode.x1f1</a>
+ &#8226;   <a href="#unidecode.x1f6">unidecode.x1f6</a>
+ &#8226;   <a href="#warnings">warnings</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#main.py">main.py</a>
+ &#8226;   <a href="#unidecode">unidecode</a>
+ &#8226;   <a href="#unidecode.__main__">unidecode.__main__</a>
+ &#8226;   <a href="#unidecode.util">unidecode.util</a>
+ &#8226;   <a href="#unidecode.x000">unidecode.x000</a>
+ &#8226;   <a href="#unidecode.x001">unidecode.x001</a>
+ &#8226;   <a href="#unidecode.x002">unidecode.x002</a>
+ &#8226;   <a href="#unidecode.x003">unidecode.x003</a>
+ &#8226;   <a href="#unidecode.x004">unidecode.x004</a>
+ &#8226;   <a href="#unidecode.x005">unidecode.x005</a>
+ &#8226;   <a href="#unidecode.x006">unidecode.x006</a>
+ &#8226;   <a href="#unidecode.x007">unidecode.x007</a>
+ &#8226;   <a href="#unidecode.x009">unidecode.x009</a>
+ &#8226;   <a href="#unidecode.x00a">unidecode.x00a</a>
+ &#8226;   <a href="#unidecode.x00b">unidecode.x00b</a>
+ &#8226;   <a href="#unidecode.x00c">unidecode.x00c</a>
+ &#8226;   <a href="#unidecode.x00d">unidecode.x00d</a>
+ &#8226;   <a href="#unidecode.x00e">unidecode.x00e</a>
+ &#8226;   <a href="#unidecode.x00f">unidecode.x00f</a>
+ &#8226;   <a href="#unidecode.x010">unidecode.x010</a>
+ &#8226;   <a href="#unidecode.x011">unidecode.x011</a>
+ &#8226;   <a href="#unidecode.x012">unidecode.x012</a>
+ &#8226;   <a href="#unidecode.x013">unidecode.x013</a>
+ &#8226;   <a href="#unidecode.x014">unidecode.x014</a>
+ &#8226;   <a href="#unidecode.x015">unidecode.x015</a>
+ &#8226;   <a href="#unidecode.x016">unidecode.x016</a>
+ &#8226;   <a href="#unidecode.x017">unidecode.x017</a>
+ &#8226;   <a href="#unidecode.x018">unidecode.x018</a>
+ &#8226;   <a href="#unidecode.x01d">unidecode.x01d</a>
+ &#8226;   <a href="#unidecode.x01e">unidecode.x01e</a>
+ &#8226;   <a href="#unidecode.x01f">unidecode.x01f</a>
+ &#8226;   <a href="#unidecode.x020">unidecode.x020</a>
+ &#8226;   <a href="#unidecode.x021">unidecode.x021</a>
+ &#8226;   <a href="#unidecode.x022">unidecode.x022</a>
+ &#8226;   <a href="#unidecode.x023">unidecode.x023</a>
+ &#8226;   <a href="#unidecode.x024">unidecode.x024</a>
+ &#8226;   <a href="#unidecode.x025">unidecode.x025</a>
+ &#8226;   <a href="#unidecode.x026">unidecode.x026</a>
+ &#8226;   <a href="#unidecode.x027">unidecode.x027</a>
+ &#8226;   <a href="#unidecode.x028">unidecode.x028</a>
+ &#8226;   <a href="#unidecode.x029">unidecode.x029</a>
+ &#8226;   <a href="#unidecode.x02a">unidecode.x02a</a>
+ &#8226;   <a href="#unidecode.x02c">unidecode.x02c</a>
+ &#8226;   <a href="#unidecode.x02e">unidecode.x02e</a>
+ &#8226;   <a href="#unidecode.x02f">unidecode.x02f</a>
+ &#8226;   <a href="#unidecode.x030">unidecode.x030</a>
+ &#8226;   <a href="#unidecode.x031">unidecode.x031</a>
+ &#8226;   <a href="#unidecode.x032">unidecode.x032</a>
+ &#8226;   <a href="#unidecode.x033">unidecode.x033</a>
+ &#8226;   <a href="#unidecode.x04d">unidecode.x04d</a>
+ &#8226;   <a href="#unidecode.x04e">unidecode.x04e</a>
+ &#8226;   <a href="#unidecode.x04f">unidecode.x04f</a>
+ &#8226;   <a href="#unidecode.x050">unidecode.x050</a>
+ &#8226;   <a href="#unidecode.x051">unidecode.x051</a>
+ &#8226;   <a href="#unidecode.x052">unidecode.x052</a>
+ &#8226;   <a href="#unidecode.x053">unidecode.x053</a>
+ &#8226;   <a href="#unidecode.x054">unidecode.x054</a>
+ &#8226;   <a href="#unidecode.x055">unidecode.x055</a>
+ &#8226;   <a href="#unidecode.x056">unidecode.x056</a>
+ &#8226;   <a href="#unidecode.x057">unidecode.x057</a>
+ &#8226;   <a href="#unidecode.x058">unidecode.x058</a>
+ &#8226;   <a href="#unidecode.x059">unidecode.x059</a>
+ &#8226;   <a href="#unidecode.x05a">unidecode.x05a</a>
+ &#8226;   <a href="#unidecode.x05b">unidecode.x05b</a>
+ &#8226;   <a href="#unidecode.x05c">unidecode.x05c</a>
+ &#8226;   <a href="#unidecode.x05d">unidecode.x05d</a>
+ &#8226;   <a href="#unidecode.x05e">unidecode.x05e</a>
+ &#8226;   <a href="#unidecode.x05f">unidecode.x05f</a>
+ &#8226;   <a href="#unidecode.x060">unidecode.x060</a>
+ &#8226;   <a href="#unidecode.x061">unidecode.x061</a>
+ &#8226;   <a href="#unidecode.x062">unidecode.x062</a>
+ &#8226;   <a href="#unidecode.x063">unidecode.x063</a>
+ &#8226;   <a href="#unidecode.x064">unidecode.x064</a>
+ &#8226;   <a href="#unidecode.x065">unidecode.x065</a>
+ &#8226;   <a href="#unidecode.x066">unidecode.x066</a>
+ &#8226;   <a href="#unidecode.x067">unidecode.x067</a>
+ &#8226;   <a href="#unidecode.x068">unidecode.x068</a>
+ &#8226;   <a href="#unidecode.x069">unidecode.x069</a>
+ &#8226;   <a href="#unidecode.x06a">unidecode.x06a</a>
+ &#8226;   <a href="#unidecode.x06b">unidecode.x06b</a>
+ &#8226;   <a href="#unidecode.x06c">unidecode.x06c</a>
+ &#8226;   <a href="#unidecode.x06d">unidecode.x06d</a>
+ &#8226;   <a href="#unidecode.x06e">unidecode.x06e</a>
+ &#8226;   <a href="#unidecode.x06f">unidecode.x06f</a>
+ &#8226;   <a href="#unidecode.x070">unidecode.x070</a>
+ &#8226;   <a href="#unidecode.x071">unidecode.x071</a>
+ &#8226;   <a href="#unidecode.x072">unidecode.x072</a>
+ &#8226;   <a href="#unidecode.x073">unidecode.x073</a>
+ &#8226;   <a href="#unidecode.x074">unidecode.x074</a>
+ &#8226;   <a href="#unidecode.x075">unidecode.x075</a>
+ &#8226;   <a href="#unidecode.x076">unidecode.x076</a>
+ &#8226;   <a href="#unidecode.x077">unidecode.x077</a>
+ &#8226;   <a href="#unidecode.x078">unidecode.x078</a>
+ &#8226;   <a href="#unidecode.x079">unidecode.x079</a>
+ &#8226;   <a href="#unidecode.x07a">unidecode.x07a</a>
+ &#8226;   <a href="#unidecode.x07b">unidecode.x07b</a>
+ &#8226;   <a href="#unidecode.x07c">unidecode.x07c</a>
+ &#8226;   <a href="#unidecode.x07d">unidecode.x07d</a>
+ &#8226;   <a href="#unidecode.x07e">unidecode.x07e</a>
+ &#8226;   <a href="#unidecode.x07f">unidecode.x07f</a>
+ &#8226;   <a href="#unidecode.x080">unidecode.x080</a>
+ &#8226;   <a href="#unidecode.x081">unidecode.x081</a>
+ &#8226;   <a href="#unidecode.x082">unidecode.x082</a>
+ &#8226;   <a href="#unidecode.x083">unidecode.x083</a>
+ &#8226;   <a href="#unidecode.x084">unidecode.x084</a>
+ &#8226;   <a href="#unidecode.x085">unidecode.x085</a>
+ &#8226;   <a href="#unidecode.x086">unidecode.x086</a>
+ &#8226;   <a href="#unidecode.x087">unidecode.x087</a>
+ &#8226;   <a href="#unidecode.x088">unidecode.x088</a>
+ &#8226;   <a href="#unidecode.x089">unidecode.x089</a>
+ &#8226;   <a href="#unidecode.x08a">unidecode.x08a</a>
+ &#8226;   <a href="#unidecode.x08b">unidecode.x08b</a>
+ &#8226;   <a href="#unidecode.x08c">unidecode.x08c</a>
+ &#8226;   <a href="#unidecode.x08d">unidecode.x08d</a>
+ &#8226;   <a href="#unidecode.x08e">unidecode.x08e</a>
+ &#8226;   <a href="#unidecode.x08f">unidecode.x08f</a>
+ &#8226;   <a href="#unidecode.x090">unidecode.x090</a>
+ &#8226;   <a href="#unidecode.x091">unidecode.x091</a>
+ &#8226;   <a href="#unidecode.x092">unidecode.x092</a>
+ &#8226;   <a href="#unidecode.x093">unidecode.x093</a>
+ &#8226;   <a href="#unidecode.x094">unidecode.x094</a>
+ &#8226;   <a href="#unidecode.x095">unidecode.x095</a>
+ &#8226;   <a href="#unidecode.x096">unidecode.x096</a>
+ &#8226;   <a href="#unidecode.x097">unidecode.x097</a>
+ &#8226;   <a href="#unidecode.x098">unidecode.x098</a>
+ &#8226;   <a href="#unidecode.x099">unidecode.x099</a>
+ &#8226;   <a href="#unidecode.x09a">unidecode.x09a</a>
+ &#8226;   <a href="#unidecode.x09b">unidecode.x09b</a>
+ &#8226;   <a href="#unidecode.x09c">unidecode.x09c</a>
+ &#8226;   <a href="#unidecode.x09d">unidecode.x09d</a>
+ &#8226;   <a href="#unidecode.x09e">unidecode.x09e</a>
+ &#8226;   <a href="#unidecode.x09f">unidecode.x09f</a>
+ &#8226;   <a href="#unidecode.x0a0">unidecode.x0a0</a>
+ &#8226;   <a href="#unidecode.x0a1">unidecode.x0a1</a>
+ &#8226;   <a href="#unidecode.x0a2">unidecode.x0a2</a>
+ &#8226;   <a href="#unidecode.x0a3">unidecode.x0a3</a>
+ &#8226;   <a href="#unidecode.x0a4">unidecode.x0a4</a>
+ &#8226;   <a href="#unidecode.x0ac">unidecode.x0ac</a>
+ &#8226;   <a href="#unidecode.x0ad">unidecode.x0ad</a>
+ &#8226;   <a href="#unidecode.x0ae">unidecode.x0ae</a>
+ &#8226;   <a href="#unidecode.x0af">unidecode.x0af</a>
+ &#8226;   <a href="#unidecode.x0b0">unidecode.x0b0</a>
+ &#8226;   <a href="#unidecode.x0b1">unidecode.x0b1</a>
+ &#8226;   <a href="#unidecode.x0b2">unidecode.x0b2</a>
+ &#8226;   <a href="#unidecode.x0b3">unidecode.x0b3</a>
+ &#8226;   <a href="#unidecode.x0b4">unidecode.x0b4</a>
+ &#8226;   <a href="#unidecode.x0b5">unidecode.x0b5</a>
+ &#8226;   <a href="#unidecode.x0b6">unidecode.x0b6</a>
+ &#8226;   <a href="#unidecode.x0b7">unidecode.x0b7</a>
+ &#8226;   <a href="#unidecode.x0b8">unidecode.x0b8</a>
+ &#8226;   <a href="#unidecode.x0b9">unidecode.x0b9</a>
+ &#8226;   <a href="#unidecode.x0ba">unidecode.x0ba</a>
+ &#8226;   <a href="#unidecode.x0bb">unidecode.x0bb</a>
+ &#8226;   <a href="#unidecode.x0bc">unidecode.x0bc</a>
+ &#8226;   <a href="#unidecode.x0bd">unidecode.x0bd</a>
+ &#8226;   <a href="#unidecode.x0be">unidecode.x0be</a>
+ &#8226;   <a href="#unidecode.x0bf">unidecode.x0bf</a>
+ &#8226;   <a href="#unidecode.x0c0">unidecode.x0c0</a>
+ &#8226;   <a href="#unidecode.x0c1">unidecode.x0c1</a>
+ &#8226;   <a href="#unidecode.x0c2">unidecode.x0c2</a>
+ &#8226;   <a href="#unidecode.x0c3">unidecode.x0c3</a>
+ &#8226;   <a href="#unidecode.x0c4">unidecode.x0c4</a>
+ &#8226;   <a href="#unidecode.x0c5">unidecode.x0c5</a>
+ &#8226;   <a href="#unidecode.x0c6">unidecode.x0c6</a>
+ &#8226;   <a href="#unidecode.x0c7">unidecode.x0c7</a>
+ &#8226;   <a href="#unidecode.x0c8">unidecode.x0c8</a>
+ &#8226;   <a href="#unidecode.x0c9">unidecode.x0c9</a>
+ &#8226;   <a href="#unidecode.x0ca">unidecode.x0ca</a>
+ &#8226;   <a href="#unidecode.x0cb">unidecode.x0cb</a>
+ &#8226;   <a href="#unidecode.x0cc">unidecode.x0cc</a>
+ &#8226;   <a href="#unidecode.x0cd">unidecode.x0cd</a>
+ &#8226;   <a href="#unidecode.x0ce">unidecode.x0ce</a>
+ &#8226;   <a href="#unidecode.x0cf">unidecode.x0cf</a>
+ &#8226;   <a href="#unidecode.x0d0">unidecode.x0d0</a>
+ &#8226;   <a href="#unidecode.x0d1">unidecode.x0d1</a>
+ &#8226;   <a href="#unidecode.x0d2">unidecode.x0d2</a>
+ &#8226;   <a href="#unidecode.x0d3">unidecode.x0d3</a>
+ &#8226;   <a href="#unidecode.x0d4">unidecode.x0d4</a>
+ &#8226;   <a href="#unidecode.x0d5">unidecode.x0d5</a>
+ &#8226;   <a href="#unidecode.x0d6">unidecode.x0d6</a>
+ &#8226;   <a href="#unidecode.x0d7">unidecode.x0d7</a>
+ &#8226;   <a href="#unidecode.x0f9">unidecode.x0f9</a>
+ &#8226;   <a href="#unidecode.x0fa">unidecode.x0fa</a>
+ &#8226;   <a href="#unidecode.x0fb">unidecode.x0fb</a>
+ &#8226;   <a href="#unidecode.x0fc">unidecode.x0fc</a>
+ &#8226;   <a href="#unidecode.x0fd">unidecode.x0fd</a>
+ &#8226;   <a href="#unidecode.x0fe">unidecode.x0fe</a>
+ &#8226;   <a href="#unidecode.x0ff">unidecode.x0ff</a>
+ &#8226;   <a href="#unidecode.x1d4">unidecode.x1d4</a>
+ &#8226;   <a href="#unidecode.x1d5">unidecode.x1d5</a>
+ &#8226;   <a href="#unidecode.x1d6">unidecode.x1d6</a>
+ &#8226;   <a href="#unidecode.x1d7">unidecode.x1d7</a>
+ &#8226;   <a href="#unidecode.x1f1">unidecode.x1f1</a>
+ &#8226;   <a href="#unidecode.x1f6">unidecode.x1f6</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.__main__"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/__main__.py" type="text/plain"><tt>unidecode.__main__</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+ &#8226;   <a href="#unidecode.util">unidecode.util</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.util"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/util.py" type="text/plain"><tt>unidecode.util</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#argparse">argparse</a>
+ &#8226;   <a href="#io">io</a>
+ &#8226;   <a href="#locale">locale</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+ &#8226;   <a href="#unidecode.__main__">unidecode.__main__</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x000"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x000.py" type="text/plain"><tt>unidecode.x000</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x001"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x001.py" type="text/plain"><tt>unidecode.x001</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x002"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x002.py" type="text/plain"><tt>unidecode.x002</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x003"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x003.py" type="text/plain"><tt>unidecode.x003</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x004"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x004.py" type="text/plain"><tt>unidecode.x004</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x005"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x005.py" type="text/plain"><tt>unidecode.x005</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x006"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x006.py" type="text/plain"><tt>unidecode.x006</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x007"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x007.py" type="text/plain"><tt>unidecode.x007</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x009"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x009.py" type="text/plain"><tt>unidecode.x009</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x00a"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x00a.py" type="text/plain"><tt>unidecode.x00a</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x00b"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x00b.py" type="text/plain"><tt>unidecode.x00b</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x00c"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x00c.py" type="text/plain"><tt>unidecode.x00c</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x00d"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x00d.py" type="text/plain"><tt>unidecode.x00d</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x00e"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x00e.py" type="text/plain"><tt>unidecode.x00e</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x00f"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x00f.py" type="text/plain"><tt>unidecode.x00f</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x010"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x010.py" type="text/plain"><tt>unidecode.x010</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x011"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x011.py" type="text/plain"><tt>unidecode.x011</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x012"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x012.py" type="text/plain"><tt>unidecode.x012</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x013"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x013.py" type="text/plain"><tt>unidecode.x013</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x014"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x014.py" type="text/plain"><tt>unidecode.x014</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x015"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x015.py" type="text/plain"><tt>unidecode.x015</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x016"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x016.py" type="text/plain"><tt>unidecode.x016</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x017"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x017.py" type="text/plain"><tt>unidecode.x017</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x018"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x018.py" type="text/plain"><tt>unidecode.x018</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x01d"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x01d.py" type="text/plain"><tt>unidecode.x01d</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x01e"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x01e.py" type="text/plain"><tt>unidecode.x01e</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x01f"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x01f.py" type="text/plain"><tt>unidecode.x01f</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x020"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x020.py" type="text/plain"><tt>unidecode.x020</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x021"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x021.py" type="text/plain"><tt>unidecode.x021</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x022"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x022.py" type="text/plain"><tt>unidecode.x022</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x023"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x023.py" type="text/plain"><tt>unidecode.x023</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x024"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x024.py" type="text/plain"><tt>unidecode.x024</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x025"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x025.py" type="text/plain"><tt>unidecode.x025</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x026"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x026.py" type="text/plain"><tt>unidecode.x026</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x027"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x027.py" type="text/plain"><tt>unidecode.x027</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x028"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x028.py" type="text/plain"><tt>unidecode.x028</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x029"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x029.py" type="text/plain"><tt>unidecode.x029</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x02a"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x02a.py" type="text/plain"><tt>unidecode.x02a</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x02c"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x02c.py" type="text/plain"><tt>unidecode.x02c</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x02e"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x02e.py" type="text/plain"><tt>unidecode.x02e</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x02f"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x02f.py" type="text/plain"><tt>unidecode.x02f</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x030"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x030.py" type="text/plain"><tt>unidecode.x030</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x031"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x031.py" type="text/plain"><tt>unidecode.x031</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x032"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x032.py" type="text/plain"><tt>unidecode.x032</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x033"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x033.py" type="text/plain"><tt>unidecode.x033</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x04d"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x04d.py" type="text/plain"><tt>unidecode.x04d</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x04e"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x04e.py" type="text/plain"><tt>unidecode.x04e</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x04f"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x04f.py" type="text/plain"><tt>unidecode.x04f</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x050"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x050.py" type="text/plain"><tt>unidecode.x050</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x051"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x051.py" type="text/plain"><tt>unidecode.x051</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x052"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x052.py" type="text/plain"><tt>unidecode.x052</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x053"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x053.py" type="text/plain"><tt>unidecode.x053</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x054"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x054.py" type="text/plain"><tt>unidecode.x054</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x055"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x055.py" type="text/plain"><tt>unidecode.x055</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x056"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x056.py" type="text/plain"><tt>unidecode.x056</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x057"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x057.py" type="text/plain"><tt>unidecode.x057</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x058"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x058.py" type="text/plain"><tt>unidecode.x058</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x059"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x059.py" type="text/plain"><tt>unidecode.x059</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x05a"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x05a.py" type="text/plain"><tt>unidecode.x05a</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x05b"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x05b.py" type="text/plain"><tt>unidecode.x05b</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x05c"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x05c.py" type="text/plain"><tt>unidecode.x05c</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x05d"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x05d.py" type="text/plain"><tt>unidecode.x05d</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x05e"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x05e.py" type="text/plain"><tt>unidecode.x05e</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x05f"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x05f.py" type="text/plain"><tt>unidecode.x05f</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x060"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x060.py" type="text/plain"><tt>unidecode.x060</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x061"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x061.py" type="text/plain"><tt>unidecode.x061</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x062"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x062.py" type="text/plain"><tt>unidecode.x062</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x063"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x063.py" type="text/plain"><tt>unidecode.x063</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x064"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x064.py" type="text/plain"><tt>unidecode.x064</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x065"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x065.py" type="text/plain"><tt>unidecode.x065</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x066"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x066.py" type="text/plain"><tt>unidecode.x066</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x067"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x067.py" type="text/plain"><tt>unidecode.x067</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x068"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x068.py" type="text/plain"><tt>unidecode.x068</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x069"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x069.py" type="text/plain"><tt>unidecode.x069</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x06a"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x06a.py" type="text/plain"><tt>unidecode.x06a</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x06b"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x06b.py" type="text/plain"><tt>unidecode.x06b</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x06c"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x06c.py" type="text/plain"><tt>unidecode.x06c</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x06d"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x06d.py" type="text/plain"><tt>unidecode.x06d</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x06e"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x06e.py" type="text/plain"><tt>unidecode.x06e</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x06f"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x06f.py" type="text/plain"><tt>unidecode.x06f</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x070"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x070.py" type="text/plain"><tt>unidecode.x070</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x071"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x071.py" type="text/plain"><tt>unidecode.x071</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x072"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x072.py" type="text/plain"><tt>unidecode.x072</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x073"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x073.py" type="text/plain"><tt>unidecode.x073</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x074"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x074.py" type="text/plain"><tt>unidecode.x074</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x075"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x075.py" type="text/plain"><tt>unidecode.x075</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x076"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x076.py" type="text/plain"><tt>unidecode.x076</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x077"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x077.py" type="text/plain"><tt>unidecode.x077</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x078"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x078.py" type="text/plain"><tt>unidecode.x078</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x079"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x079.py" type="text/plain"><tt>unidecode.x079</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x07a"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x07a.py" type="text/plain"><tt>unidecode.x07a</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x07b"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x07b.py" type="text/plain"><tt>unidecode.x07b</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x07c"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x07c.py" type="text/plain"><tt>unidecode.x07c</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x07d"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x07d.py" type="text/plain"><tt>unidecode.x07d</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x07e"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x07e.py" type="text/plain"><tt>unidecode.x07e</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x07f"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x07f.py" type="text/plain"><tt>unidecode.x07f</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x080"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x080.py" type="text/plain"><tt>unidecode.x080</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x081"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x081.py" type="text/plain"><tt>unidecode.x081</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x082"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x082.py" type="text/plain"><tt>unidecode.x082</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x083"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x083.py" type="text/plain"><tt>unidecode.x083</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x084"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x084.py" type="text/plain"><tt>unidecode.x084</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x085"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x085.py" type="text/plain"><tt>unidecode.x085</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x086"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x086.py" type="text/plain"><tt>unidecode.x086</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x087"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x087.py" type="text/plain"><tt>unidecode.x087</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x088"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x088.py" type="text/plain"><tt>unidecode.x088</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x089"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x089.py" type="text/plain"><tt>unidecode.x089</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x08a"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x08a.py" type="text/plain"><tt>unidecode.x08a</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x08b"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x08b.py" type="text/plain"><tt>unidecode.x08b</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x08c"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x08c.py" type="text/plain"><tt>unidecode.x08c</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x08d"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x08d.py" type="text/plain"><tt>unidecode.x08d</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x08e"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x08e.py" type="text/plain"><tt>unidecode.x08e</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x08f"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x08f.py" type="text/plain"><tt>unidecode.x08f</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x090"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x090.py" type="text/plain"><tt>unidecode.x090</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x091"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x091.py" type="text/plain"><tt>unidecode.x091</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x092"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x092.py" type="text/plain"><tt>unidecode.x092</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x093"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x093.py" type="text/plain"><tt>unidecode.x093</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x094"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x094.py" type="text/plain"><tt>unidecode.x094</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x095"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x095.py" type="text/plain"><tt>unidecode.x095</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x096"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x096.py" type="text/plain"><tt>unidecode.x096</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x097"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x097.py" type="text/plain"><tt>unidecode.x097</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x098"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x098.py" type="text/plain"><tt>unidecode.x098</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x099"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x099.py" type="text/plain"><tt>unidecode.x099</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x09a"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x09a.py" type="text/plain"><tt>unidecode.x09a</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x09b"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x09b.py" type="text/plain"><tt>unidecode.x09b</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x09c"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x09c.py" type="text/plain"><tt>unidecode.x09c</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x09d"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x09d.py" type="text/plain"><tt>unidecode.x09d</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x09e"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x09e.py" type="text/plain"><tt>unidecode.x09e</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x09f"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x09f.py" type="text/plain"><tt>unidecode.x09f</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0a0"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0a0.py" type="text/plain"><tt>unidecode.x0a0</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0a1"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0a1.py" type="text/plain"><tt>unidecode.x0a1</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0a2"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0a2.py" type="text/plain"><tt>unidecode.x0a2</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0a3"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0a3.py" type="text/plain"><tt>unidecode.x0a3</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0a4"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0a4.py" type="text/plain"><tt>unidecode.x0a4</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0ac"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0ac.py" type="text/plain"><tt>unidecode.x0ac</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0ad"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0ad.py" type="text/plain"><tt>unidecode.x0ad</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0ae"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0ae.py" type="text/plain"><tt>unidecode.x0ae</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0af"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0af.py" type="text/plain"><tt>unidecode.x0af</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0b0"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0b0.py" type="text/plain"><tt>unidecode.x0b0</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0b1"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0b1.py" type="text/plain"><tt>unidecode.x0b1</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0b2"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0b2.py" type="text/plain"><tt>unidecode.x0b2</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0b3"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0b3.py" type="text/plain"><tt>unidecode.x0b3</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0b4"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0b4.py" type="text/plain"><tt>unidecode.x0b4</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0b5"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0b5.py" type="text/plain"><tt>unidecode.x0b5</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0b6"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0b6.py" type="text/plain"><tt>unidecode.x0b6</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0b7"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0b7.py" type="text/plain"><tt>unidecode.x0b7</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0b8"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0b8.py" type="text/plain"><tt>unidecode.x0b8</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0b9"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0b9.py" type="text/plain"><tt>unidecode.x0b9</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0ba"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0ba.py" type="text/plain"><tt>unidecode.x0ba</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0bb"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0bb.py" type="text/plain"><tt>unidecode.x0bb</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0bc"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0bc.py" type="text/plain"><tt>unidecode.x0bc</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0bd"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0bd.py" type="text/plain"><tt>unidecode.x0bd</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0be"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0be.py" type="text/plain"><tt>unidecode.x0be</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0bf"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0bf.py" type="text/plain"><tt>unidecode.x0bf</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0c0"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0c0.py" type="text/plain"><tt>unidecode.x0c0</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0c1"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0c1.py" type="text/plain"><tt>unidecode.x0c1</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0c2"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0c2.py" type="text/plain"><tt>unidecode.x0c2</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0c3"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0c3.py" type="text/plain"><tt>unidecode.x0c3</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0c4"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0c4.py" type="text/plain"><tt>unidecode.x0c4</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0c5"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0c5.py" type="text/plain"><tt>unidecode.x0c5</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0c6"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0c6.py" type="text/plain"><tt>unidecode.x0c6</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0c7"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0c7.py" type="text/plain"><tt>unidecode.x0c7</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0c8"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0c8.py" type="text/plain"><tt>unidecode.x0c8</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0c9"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0c9.py" type="text/plain"><tt>unidecode.x0c9</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0ca"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0ca.py" type="text/plain"><tt>unidecode.x0ca</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0cb"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0cb.py" type="text/plain"><tt>unidecode.x0cb</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0cc"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0cc.py" type="text/plain"><tt>unidecode.x0cc</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0cd"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0cd.py" type="text/plain"><tt>unidecode.x0cd</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0ce"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0ce.py" type="text/plain"><tt>unidecode.x0ce</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0cf"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0cf.py" type="text/plain"><tt>unidecode.x0cf</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0d0"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0d0.py" type="text/plain"><tt>unidecode.x0d0</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0d1"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0d1.py" type="text/plain"><tt>unidecode.x0d1</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0d2"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0d2.py" type="text/plain"><tt>unidecode.x0d2</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0d3"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0d3.py" type="text/plain"><tt>unidecode.x0d3</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0d4"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0d4.py" type="text/plain"><tt>unidecode.x0d4</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0d5"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0d5.py" type="text/plain"><tt>unidecode.x0d5</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0d6"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0d6.py" type="text/plain"><tt>unidecode.x0d6</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0d7"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0d7.py" type="text/plain"><tt>unidecode.x0d7</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0f9"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0f9.py" type="text/plain"><tt>unidecode.x0f9</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0fa"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0fa.py" type="text/plain"><tt>unidecode.x0fa</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0fb"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0fb.py" type="text/plain"><tt>unidecode.x0fb</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0fc"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0fc.py" type="text/plain"><tt>unidecode.x0fc</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0fd"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0fd.py" type="text/plain"><tt>unidecode.x0fd</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0fe"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0fe.py" type="text/plain"><tt>unidecode.x0fe</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x0ff"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x0ff.py" type="text/plain"><tt>unidecode.x0ff</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x1d4"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x1d4.py" type="text/plain"><tt>unidecode.x1d4</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x1d5"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x1d5.py" type="text/plain"><tt>unidecode.x1d5</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x1d6"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x1d6.py" type="text/plain"><tt>unidecode.x1d6</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x1d7"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x1d7.py" type="text/plain"><tt>unidecode.x1d7</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x1f1"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x1f1.py" type="text/plain"><tt>unidecode.x1f1</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="unidecode.x1f6"></a>
+  <a target="code" href="///D:/users/walte/appdata/local/programs/python/python38/lib/site-packages/unidecode/x1f6.py" type="text/plain"><tt>unidecode.x1f6</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#unidecode">unidecode</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#unidecode">unidecode</a>
 
   </div>
 
@@ -6646,6 +10237,7 @@ imported by:
  &#8226;   <a href="#importlib">importlib</a>
  &#8226;   <a href="#importlib.abc">importlib.abc</a>
  &#8226;   <a href="#importlib.util">importlib.util</a>
+ &#8226;   <a href="#json">json</a>
  &#8226;   <a href="#locale">locale</a>
  &#8226;   <a href="#logging">logging</a>
  &#8226;   <a href="#main.py">main.py</a>
@@ -6657,6 +10249,7 @@ imported by:
  &#8226;   <a href="#tempfile">tempfile</a>
  &#8226;   <a href="#threading">threading</a>
  &#8226;   <a href="#typing">typing</a>
+ &#8226;   <a href="#unidecode">unidecode</a>
  &#8226;   <a href="#urllib.parse">urllib.parse</a>
  &#8226;   <a href="#urllib.request">urllib.request</a>
  &#8226;   <a href="#weakref">weakref</a>
