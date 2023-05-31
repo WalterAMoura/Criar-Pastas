@@ -1,0 +1,14 @@
+[
+  {
+    "source": "E:\\Projetos\\Igreja\\pastas-copy-paste\\file1.txt",
+    "destination": "01 - ESCOLA SABATINA\\file1.txt"
+  },
+  {
+    "source": "E:\\Projetos\\Igreja\\pastas-copy-paste\\file2.txt",
+    "destination": "02 - ANÚNCIOS\\file2.txt"
+  },
+  {
+    "source": "E:\\Projetos\\Igreja\\pastas-copy-paste\\file3.txt",
+    "destination": "03 - SAÚDE\\file3.txt"
+  }
+]

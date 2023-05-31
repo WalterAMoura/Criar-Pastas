@@ -2,6 +2,7 @@ import os
 import shutil
 import datetime
 import locale
+import json
 
 def delete_directory(path):
     shutil.rmtree(path)
@@ -56,22 +57,19 @@ def create_folders(root_path):
 def copy_files(source_path, destination_path):
     shutil.copy(source_path, destination_path)
 
-def copy_config_files(source_path, destination_path):
-    files_to_copy = [
-        {"source": "file1.txt", "destination": "01 - ESCOLA SABATINA/file1.txt"},
-        {"source": "file2.txt", "destination": "04 - PROVAI E VEDE/file2.txt"},
-        {"source": "file3.txt", "destination": "07 - FUNDO MUSICAL/file3.txt"}
-    ]
+def copy_config_files(config_file_path, destination_path):
+    with open(config_file_path, "r") as file:
+        files_to_copy = json.load(file)
 
     for file_info in files_to_copy:
-        source_file_path = os.path.join(source_path, file_info["source"])
-        destination_file_path = os.path.join(destination_path, file_info["destination"])
+        source_file_path = file_info["source"]
+        destination_file_path = os.path.join(destination_path, os.path.basename(source_file_path))
 
         copy_files(source_file_path, destination_file_path)
 
 def main():
     root_path = "C:\\Users\\walte\\Desktop"
-    source_path = "E:\\Projetos\\Igreja\\pastas-copy-paste"
+    config_file_path = os.path.join(os.path.dirname(__file__), "config.json")
 
     create_folders(root_path)
 
@@ -87,7 +85,7 @@ def main():
     # Caminho completo da pasta raiz
     root_folder_path = os.path.join(root_path, folder_name)
 
-    copy_config_files(source_path, root_folder_path)
+    copy_config_files(config_file_path, root_folder_path)
 
     print("Estrutura de pastas criada com sucesso!")
 
