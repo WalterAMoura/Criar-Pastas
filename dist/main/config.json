@@ -1,0 +1,29 @@
+{
+  "rootPath": "C:\\Users\\walte\\Desktop\\",
+  "subFolders": [
+    "01 - ESCOLA SABATINA",
+    "02 - ANUNCIOS",
+    "03 - SAUDE",
+    "04 - PROVAI E VEDE",
+    "05 - MENSAGEM MUSICAL",
+    "06 - CULTO DIVINO",
+    "07 - FUNDO MUSICAL"
+  ],
+  "filesCopy": [
+    {
+      "source": "E:\\Projetos\\Igreja\\pastas-copy-paste\\",
+      "fileName": "file1.txt",
+      "destination": "01 - ESCOLA SABATINA\\"
+    },
+    {
+      "source": "E:\\Projetos\\Igreja\\pastas-copy-paste\\",
+      "fileName": "file2.txt",
+      "destination": "02 - ANUNCIOS\\"
+    },
+    {
+      "source": "E:\\Projetos\\Igreja\\pastas-copy-paste\\",
+      "fileName": "file3.txt",
+      "destination": "03 - SAUDE\\"
+    }
+  ]
+}
