@@ -97,7 +97,7 @@ cd /caminho/para/o/diretorio
 
 ### Compile o script usando o PyInstaller:
 ```
-pyinstaller --onefile nome_do_script.py
+pyinstaller --add-data "config.json;." nome_do_script.py
 ```
 
 __Isso criará um executável na pasta dist com o nome nome_do_script.exe (no Windows) ou nome_do_script (no Linux/macOS).
@@ -106,5 +106,6 @@ Copie o arquivo config.json para o mesmo diretório do executável criado.__
 __Agora você pode executar o arquivo nome_do_script.exe (no Windows) ou nome_do_script (no Linux/macOS), e o programa utilizará as configurações do arquivo config.json para criar a estrutura de pastas e copiar os arquivos conforme especificado.
 Certifique-se de substituir nome_do_script pelo nome do seu script Python real.__
 
+__Aqui note que também usei o "--add-data" para especificar um arquivo que necessário para execução do meu script, como isso complilador ira copiar o arquivo.__
 
 > <font color="grey">Obs.: Após compilar deve-se copiar o arquivo</font> <font color="red">__config.json__</font> <font color="grey"> para o diretório raiz do executável
