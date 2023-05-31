@@ -82,4 +82,29 @@ Certifique-se de fornecer os caminhos corretos para as pastas e arquivos no arqu
 
 Você pode compilar o script Python em um executável independente usando ferramentas como PyInstaller, cx_Freeze ou Py2exe. Isso permitirá que você execute o script em um ambiente sem a necessidade de ter o Python instalado.
 
-Consulte a documentação das ferramentas de compilação para obter mais informações sobre como compilar o script em um executável.
+Instale o PyInstaller:
+
+### PyInstaller
+
+```
+pip install pyinstaller
+```
+### Navegue até o diretório onde o seu script Python está localizado:
+
+```
+cd /caminho/para/o/diretorio
+```
+
+### Compile o script usando o PyInstaller:
+```
+pyinstaller --onefile nome_do_script.py
+```
+
+__Isso criará um executável na pasta dist com o nome nome_do_script.exe (no Windows) ou nome_do_script (no Linux/macOS).
+Copie o arquivo config.json para o mesmo diretório do executável criado.__
+
+__Agora você pode executar o arquivo nome_do_script.exe (no Windows) ou nome_do_script (no Linux/macOS), e o programa utilizará as configurações do arquivo config.json para criar a estrutura de pastas e copiar os arquivos conforme especificado.
+Certifique-se de substituir nome_do_script pelo nome do seu script Python real.__
+
+
+> <font color="grey">Obs.: Após compilar deve-se copiar o arquivo</font> <font color="red">__config.json__</font> <font color="grey"> para o diretório raiz do executável
