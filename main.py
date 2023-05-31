@@ -1,6 +1,8 @@
 import os
 import json
 import shutil
+from datetime import datetime
+import locale
 
 def copy_files(source_path, destination_path):
     shutil.copy(source_path, destination_path)
@@ -33,16 +35,15 @@ def create_subfolders(root_path):
         os.makedirs(subfolder_path, exist_ok=True)
 
 def main():
+    # Defina o idioma para o formato de data em português
+    locale.setlocale(locale.LC_ALL, 'pt_BR.utf-8')
+
     # Obtenha a data atual
-    import datetime
-    now = datetime.datetime.now()
+    now = datetime.now()
     formatted_date = now.strftime('%A %d DE %B %Y').upper()
 
-    # Defina o caminho da pasta raiz
+    # Crie a pasta raiz com a data formatada
     root_path = os.path.join('C:\\Users\\walte\\Desktop', formatted_date)
-
-    # Crie a pasta raiz
-    os.makedirs(root_path, exist_ok=True)
 
     # Crie as subpastas
     create_subfolders(root_path)
