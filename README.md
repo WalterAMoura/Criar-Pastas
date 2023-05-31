@@ -23,7 +23,7 @@ Copy code
 
 python main.py
 
-swift
+lua
 Copy code
 
 6. O script criará a estrutura de pastas e copiará os arquivos de acordo com as configurações fornecidas no arquivo config.json.
@@ -34,47 +34,52 @@ Copy code
 
 O arquivo config.json contém as configurações para o script. Ele deve estar localizado no mesmo diretório do script (main.py). O arquivo config.json possui a seguinte estrutura:
 
-```json
-{
-"rootPath": "C:\\caminho\\para\\pasta\\raiz\\",
-"subFolders": [
- "subpasta1",
- "subpasta2",
- "subpasta3"
-],
-"filesCopy": [
- {
-   "source": "caminho\\para\\arquivo1.txt",
-   "destination": "subpasta1\\"
- },
- {
-   "source": "caminho\\para\\arquivo2.txt",
-   "destination": "subpasta2\\"
- },
- {
-   "source": "caminho\\para\\arquivo3.txt",
-   "destination": "subpasta3\\"
- }
-]
-}
-rootPath (string): O caminho completo para a pasta raiz onde a estrutura de pastas será criada.
+| Campo       | Descrição                                                  | Tipo   | Exemplo                              |
+|-------------|------------------------------------------------------------|--------|--------------------------------------|
+| rootPath    | Caminho completo para a pasta raiz                         | String | "C:\\caminho\\para\\pasta\\raiz\\"   |
+| subFolders  | Lista de nomes das subpastas a serem criadas               | Array  | ["subpasta1", "subpasta2"]            |
+| filesCopy   | Lista de objetos com informações sobre os arquivos a copiar | Array  | Ver detalhes abaixo                   |
 
-subFolders (array): Uma lista de nomes das subpastas que serão criadas dentro da pasta raiz.
+Cada objeto dentro da lista filesCopy possui a seguinte estrutura:
 
-filesCopy (array): Uma lista de objetos que contêm informações sobre os arquivos a serem copiados. Cada objeto possui os seguintes campos:
+| Campo        | Descrição                                             | Tipo   | Exemplo                              |
+|--------------|-------------------------------------------------------|--------|--------------------------------------|
+| source       | Caminho completo para o arquivo de origem a ser copiado | String | "caminho\\para\\arquivo1.txt"         |
+| destination  | Caminho relativo da subpasta de destino para o arquivo | String | "subpasta1\\"                        |
 
-source (string): O caminho completo para o arquivo de origem que será copiado.
-destination (string): O caminho relativo da subpasta de destino onde o arquivo será copiado.
 Certifique-se de fornecer os caminhos corretos para as pastas e arquivos no arquivo config.json antes de executar o script.
 
-Compilação para Executável (opcional)
+```
+{
+  "rootPath": "C:\\Users\\walte\\Desktop\\",
+  "subFolders": [
+    "01 - ESCOLA SABATINA",
+    "02 - ANUNCIOS",
+    "03 - SAUDE",
+    "04 - PROVAI E VEDE",
+    "05 - MENSAGEM MUSICAL",
+    "06 - CULTO DIVINO",
+    "07 - FUNDO MUSICAL"
+  ],
+  "filesCopy": [
+    {
+      "source": "E:\\Projetos\\Igreja\\pastas-copy-paste\\file1.txt",
+      "destination": "01 - ESCOLA SABATINA\\file1.txt"
+    },
+    {
+      "source": "E:\\Projetos\\Igreja\\pastas-copy-paste\\file2.txt",
+      "destination": "02 - ANUNCIOS\\file2.txt"
+    },
+    {
+      "source": "E:\\Projetos\\Igreja\\pastas-copy-paste\\file3.txt",
+      "destination": "03 - SAUDE\\file3.txt"
+    }
+  ]
+}
+```
+
+## Compilação para Executável (opcional)
+
 Você pode compilar o script Python em um executável independente usando ferramentas como PyInstaller, cx_Freeze ou Py2exe. Isso permitirá que você execute o script em um ambiente sem a necessidade de ter o Python instalado.
 
 Consulte a documentação das ferramentas de compilação para obter mais informações sobre como compilar o script em um executável.
-
-bash
-Copy code
-
-Lembre-se de substituir os caminhos e nomes de arquivo mencionados no exemplo pelo seu próprio caminho e nomes de arquivo relevantes.
-
-Espero que isso ajude!
