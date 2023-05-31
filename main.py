@@ -17,6 +17,21 @@ def copy_config_files(root_path):
 
         copy_files(source_path, destination_path)
 
+def create_subfolders(root_path):
+    subfolders = [
+        '01 - ESCOLA SABATINA',
+        '02 - ANÚNCIOS',
+        '03 - SAÚDE',
+        '04 - PROVAI E VEDE',
+        '05 - MENSAGEM MUSICAL',
+        '06 - CULTO DIVINO',
+        '07 - FUNDO MUSICAL'
+    ]
+
+    for subfolder in subfolders:
+        subfolder_path = os.path.join(root_path, subfolder)
+        os.makedirs(subfolder_path, exist_ok=True)
+
 def main():
     # Obtenha a data atual
     import datetime
@@ -26,8 +41,11 @@ def main():
     # Defina o caminho da pasta raiz
     root_path = os.path.join('C:\\Users\\walte\\Desktop', formatted_date)
 
-    # Crie as pastas
+    # Crie a pasta raiz
     os.makedirs(root_path, exist_ok=True)
+
+    # Crie as subpastas
+    create_subfolders(root_path)
 
     # Copie os arquivos de configuração
     copy_config_files(root_path)
