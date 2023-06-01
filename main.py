@@ -136,6 +136,12 @@ def main():
     with open(config_path) as file:
         config = json.load(file)
 
+    # Verifica se o dia da semana está habilitado para a execução
+    weekday = now.strftime('%a').lower()
+    if weekday not in config['dayOfExecution']:
+        print(f'O script não está configurado para ser executado no dia {weekday}.')
+        return
+
     # Obtém o caminho da pasta raiz a partir do arquivo de configuração
     root_path = config['rootPath']
     root_path = os.path.join(root_path, formatted_date)
