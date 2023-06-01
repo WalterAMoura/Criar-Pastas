@@ -151,23 +151,6 @@ def main():
     # Remove a acentuação do nome da pasta raiz
     root_path_normalized = unidecode(root_path)
 
-    # Verifica se a pasta raiz já existe
-    if os.path.exists(root_path_normalized):
-        while True:
-            answer = input(f'A pasta raiz "{root_path_normalized}" já existe. Deseja continuar? (S/N) ')
-            if answer.lower() == 's':
-                break
-            elif answer.lower() == 'n':
-                print('Execução cancelada.')
-                return
-            else:
-                print('Resposta inválida. Digite "S" para continuar ou "N" para cancelar.')
-
-            # Espera 30 segundos por uma resposta do usuário
-            time.sleep(30)
-            print('Tempo limite excedido. Execução encerrada.')
-            return
-
     # Obtém a lista de subpastas a partir do arquivo de configuração
     subfolders = config['subFolders']
 
@@ -179,5 +162,31 @@ def main():
 
     print('Estrutura de pastas criada com sucesso!')
 
+def confirm_execution():
+    """
+    Solicita a confirmação do usuário para prosseguir com a execução.
+
+    Returns:
+        bool: True se a execução deve continuar, False caso contrário.
+    """
+    print('A pasta raiz já existe. Deseja continuar? (S/N)')
+    start_time = time.time()
+    while True:
+        answer = input()
+        elapsed_time = time.time() - start_time
+        if answer.upper() == 'S':
+            return True
+        elif answer.upper() == 'N':
+            return False
+        elif elapsed_time >= 30:
+            print('Tempo limite excedido. A execução será encerrada.')
+            return False
+
 if __name__ == '__main__':
-    main()
+    if os.path.exists(root_path_normalized):
+        if confirm_execution():
+            main()
+        else:
+            print('Execução cancelada pelo usuário.')
+    else:
+        main()
