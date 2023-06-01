@@ -65,7 +65,7 @@ def format_path(path, config):
     placeholders = {
         '{{ano}}': now.year,
         '{{numeroMes}}': f'{now.month:02d}',
-        '{{nomeMes}}': now.strftime('%B'),
+        '{{nomeMes}}': now.strftime('%B').capitalize(),
         '{{dia}}': f'{now.day:02d}',
         '{{hora}}': f'{now.hour:02d}',
         '{{minuto}}': f'{now.minute:02d}',
@@ -90,7 +90,7 @@ def format_file_name(file_name, config):
     placeholders = {
         '{{ano}}': now.year,
         '{{numeroMes}}': f'{now.month:02d}',
-        '{{nomeMes}}': now.strftime('%B'),
+        '{{nomeMes}}': now.strftime('%B').capitalize(),
         '{{dia}}': f'{now.day:02d}',
         '{{hora}}': f'{now.hour:02d}',
         '{{minuto}}': f'{now.minute:02d}',
