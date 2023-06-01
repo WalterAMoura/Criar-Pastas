@@ -5,6 +5,7 @@ from datetime import datetime
 from unidecode import unidecode
 import re
 import locale
+import time
 
 def copy_files(source_path, destination_path):
     """
@@ -149,6 +150,23 @@ def main():
 
     # Remove a acentuação do nome da pasta raiz
     root_path_normalized = unidecode(root_path)
+
+    # Verifica se a pasta raiz já existe
+    if os.path.exists(root_path_normalized):
+        while True:
+            answer = input(f'A pasta raiz "{root_path_normalized}" já existe. Deseja continuar? (S/N) ')
+            if answer.lower() == 's':
+                break
+            elif answer.lower() == 'n':
+                print('Execução cancelada.')
+                return
+            else:
+                print('Resposta inválida. Digite "S" para continuar ou "N" para cancelar.')
+
+            # Espera 30 segundos por uma resposta do usuário
+            time.sleep(30)
+            print('Tempo limite excedido. Execução encerrada.')
+            return
 
     # Obtém a lista de subpastas a partir do arquivo de configuração
     subfolders = config['subFolders']
