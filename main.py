@@ -124,6 +124,26 @@ def find_files_with_regex(source_path, file_name_pattern):
         print(f'Erro ao encontrar o diretório {source_path}: {str(e)}')
         return []
 
+def confirm_execution():
+    """
+    Solicita a confirmação do usuário para prosseguir com a execução.
+
+    Returns:
+        bool: True se a execução deve continuar, False caso contrário.
+    """
+    print('A pasta raiz já existe. Deseja continuar? (S/N)')
+    start_time = time.time()
+    while True:
+        answer = input()
+        elapsed_time = time.time() - start_time
+        if answer.upper() == 'S':
+            return True
+        elif answer.upper() == 'N':
+            return False
+        elif elapsed_time >= 30:
+            print('Tempo limite excedido. A execução será encerrada.')
+            return False
+
 def main():
     # Define o idioma para o formato de data em português
     locale.setlocale(locale.LC_ALL, 'pt_BR.utf-8')
@@ -151,42 +171,25 @@ def main():
     # Remove a acentuação do nome da pasta raiz
     root_path_normalized = unidecode(root_path)
 
-    # Obtém a lista de subpastas a partir do arquivo de configuração
-    subfolders = config['subFolders']
-
-    # Cria as subpastas
-    create_subfolders(root_path_normalized, subfolders)
-
-    # Copia os arquivos de configuração
-    copy_config_files(root_path_normalized, config)
-
-    print('Estrutura de pastas criada com sucesso!')
-
-def confirm_execution():
-    """
-    Solicita a confirmação do usuário para prosseguir com a execução.
-
-    Returns:
-        bool: True se a execução deve continuar, False caso contrário.
-    """
-    print('A pasta raiz já existe. Deseja continuar? (S/N)')
-    start_time = time.time()
-    while True:
-        answer = input()
-        elapsed_time = time.time() - start_time
-        if answer.upper() == 'S':
-            return True
-        elif answer.upper() == 'N':
-            return False
-        elif elapsed_time >= 30:
-            print('Tempo limite excedido. A execução será encerrada.')
-            return False
-
-if __name__ == '__main__':
     if os.path.exists(root_path_normalized):
         if confirm_execution():
-            main()
+            # Cria as subpastas
+            create_subfolders(root_path_normalized, config['subFolders'])
+
+            # Copia os arquivos de configuração
+            copy_config_files(root_path_normalized, config)
+
+            print('Estrutura de pastas criada com sucesso!')
         else:
             print('Execução cancelada pelo usuário.')
     else:
-        main()
+        # Cria as subpastas
+        create_subfolders(root_path_normalized, config['subFolders'])
+
+        # Copia os arquivos de configuração
+        copy_config_files(root_path_normalized, config)
+
+        print('Estrutura de pastas criada com sucesso!')
+
+if __name__ == '__main__':
+    main()
