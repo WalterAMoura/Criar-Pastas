@@ -138,8 +138,9 @@ def main():
 
     # Verifica se o dia da semana está habilitado para a execução
     weekday = now.strftime('%a').lower()
+    weekday_name_complete = now.strftime('%A').upper()
     if weekday not in config['dayOfExecution']:
-        print(f'O script não está configurado para ser executado no dia {weekday}.')
+        print(f'O script não está configurado para ser executado no dia: {weekday_name_complete}.')
         return
 
     # Obtém o caminho da pasta raiz a partir do arquivo de configuração
