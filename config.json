@@ -1,35 +1,32 @@
 {
-  "rootPath": "C:\\Users\\walte\\Desktop\\",
-  "dayOfExecution" : ["dom","qua","sab","qui"],
+  "rootPath": "C:\\caminho\\para\\pasta\\raiz\\",
+  "dayOfExecution": ["seg", "qua", "sex"],
   "subFolders": [
-    "01 - ESCOLA SABATINA",
-    "02 - ANUNCIOS",
-    "03 - SAUDE",
-    "04 - PROVAI E VEDE",
-    "05 - MENSAGEM MUSICAL",
-    "06 - CULTO DIVINO",
-    "07 - FUNDO MUSICAL"
+    "Subpasta1",
+    "Subpasta2",
+    "Subpasta3",
+    "Subpasta4"
   ],
   "filesCopy": [
     {
-      "source": "E:\\Projetos\\Igreja\\pastas-copy-paste\\",
-      "fileName": "file1.txt",
-      "destination": "01 - ESCOLA SABATINA\\"
+      "source": "C:\\caminho\\para\\arquivos\\",
+      "fileName": "arquivo1.txt",
+      "destination": "Subpasta1\\"
     },
     {
-      "source": "E:\\Projetos\\Igreja\\pastas-copy-paste\\",
-      "fileName": "file2.txt",
-      "destination": "02 - ANUNCIOS\\"
+      "source": "C:\\caminho\\para\\arquivos\\",
+      "fileName": "arquivo2.txt",
+      "destination": "Subpasta2\\"
     },
     {
-      "source": "E:\\Projetos\\Igreja\\pastas-copy-paste\\",
-      "fileName": "file3.txt",
-      "destination": "03 - SAUDE\\"
+      "source": "C:\\caminho\\para\\arquivos\\",
+      "fileName": "arquivo3.txt",
+      "destination": "Subpasta3\\"
     },
     {
-      "source": "E:\\Projetos\\Igreja\\pastas-copy-paste\\PROVAI E VEDE {{ano}}\\{{numeroMes}}_{{nomeMes}}\\",
+      "source": "C:\\caminho\\para\\arquivos\\PASTA {{ano}}\\{{numeroMes}}_{{nomeMes}}\\",
       "fileName": "{{dia}}.*.mp4",
-      "destination": "04 - PROVAI E VEDE\\"
+      "destination": "Subpasta4\\"
     }
   ]
 }
