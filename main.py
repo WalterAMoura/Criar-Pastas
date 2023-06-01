@@ -112,11 +112,16 @@ def find_files_with_regex(source_path, file_name_pattern):
     Returns:
         list: Lista de caminhos dos arquivos correspondentes.
     """
-    files = []
-    for file_name in os.listdir(source_path):
-        if re.match(file_name_pattern, file_name):
-            files.append(os.path.join(source_path, file_name))
-    return files
+    try:
+        matching_files = []
+        for file_name in os.listdir(source_path):
+            if re.match(file_name_pattern, file_name):
+                file_path = os.path.join(source_path, file_name)
+                matching_files.append(file_path)
+        return matching_files
+    except FileNotFoundError as e:
+        print(f'Erro ao encontrar o diretório {source_path}: {str(e)}')
+        return []
 
 def main():
     # Define o idioma para o formato de data em português
