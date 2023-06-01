@@ -25,6 +25,11 @@
       "source": "E:\\Projetos\\Igreja\\pastas-copy-paste\\",
       "fileName": "file3.txt",
       "destination": "03 - SAUDE\\"
+    },
+    {
+      "source": "E:\\Projetos\\Igreja\\pastas-copy-paste\\PROVAI E VEDE {{ano}}\\{{numeroMes}}_{{nomeMes}}\\",
+      "fileName": "{{dia}}.*.mp4",
+      "destination": "03 - SAUDE\\"
     }
   ]
 }
