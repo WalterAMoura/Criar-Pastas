@@ -28,15 +28,44 @@ pip install unidecode
 
 O arquivo config.json contém as configurações para o script. Ele deve estar localizado no mesmo diretório do script (main.py). O arquivo config.json possui a seguinte estrutura:
 
-| Campo | Descrição | Tipo | Exemplo |
-| --- | --- | --- | --- |
-| rootPath | O diretório raiz onde serão criadas as pastas e copiados os arquivos. Certifique-se de usar barras duplas (`\\`) no lugar de barras simples (`\`). | String | "C:\\caminho\\para\\pasta\\raiz\\" |
-| dayOfExecution | Lista dos dias da semana em que o script pode ser executado e as pastas podem ser criadas. Use a abreviação de três letras para o dia (por exemplo, "seg", "ter", "qua"). | Lista de Strings | ["seg", "qua", "sex"] |
-| subFolders | Lista de nomes fictícios das subpastas a serem criadas dentro da pasta raiz. Certifique-se de usar o formato correto para os nomes das subpastas. | Lista de Strings | ["Subpasta1", "Subpasta2", "Subpasta3"] |
-| filesCopy | Lista dos arquivos fictícios a serem copiados para suas respectivas subpastas. Cada item da lista deve conter os campos source, fileName e destination. Certifique-se de usar barras duplas (`\\`) no lugar de barras simples (`\`). | Lista de Objetos JSON | [  {     "source": "C:\\caminho\\para\\arquivos\\",    "fileName": "arquivo1.txt",     "destination": "Subpasta1\\"   },  {    "source": "C:\\caminho\\para\\arquivos\\",    "fileName": "arquivo2.txt",    "destination": "Subpasta2\\"  },  {    "source": "C:\\caminho\\para\\arquivos\\",    "fileName": "arquivo3.txt",    "destination": "Subpasta3\\"  }] |
+| Campo            | Descrição                                          | Tipo     | Exemplo                                                      |
+|------------------|----------------------------------------------------|----------|--------------------------------------------------------------|
+| rootPath         | Caminho raiz onde as pastas serão criadas           | String   | "C:\\Users\\usuario\\Desktop\\"                             |
+| dayOfExecution   | Dias da semana em que o script pode ser executado   | Lista    | ["dom", "qua", "sab"]                                       |
+| subFolders       | Lista de subpastas a serem criadas                  | Lista    | ["A", "B", "C"]                                             |
+| filesCopy        | Lista de arquivos a serem copiados                  | Lista    | Veja a tabela de arquivos a serem copiados abaixo            |
+
+### Tabela de arquivos a serem copiados:
+
+| Campo       | Descrição                                  | Tipo   | Exemplo com Placeholders                                          | Exemplo sem Placeholders                           |
+|-------------|--------------------------------------------|--------|------------------------------------------------------------------|---------------------------------------------------|
+| source      | Caminho da pasta de origem dos arquivos    | String | "C:\\Caminho\\Origem\\{{ano}}\\{{nomeMes}}\\"                     | "C:\\Caminho\\Origem\\subpasta\\"                  |
+| fileName    | Padrão de nome do arquivo usando regex     | String | "{{dia}}_[A-Za-z]+\\.mp4"                                        | "file[0-9]+\\.txt"                                |
+| destination | Subpasta de destino para o arquivo         | String | "{{numeroMes}}_{{nomeMes}}\\"                                     | "A\\"                                             |
+
+#### Exemplos:
+1. Arquivo com placeholders:
+   - source: "C:\\Caminho\\Origem\\{{ano}}\\{{nomeMes}}\\"
+   - fileName: "{{dia}}_[A-Za-z]+\\.mp4"
+   - destination: "{{numeroMes}}_{{nomeMes}}\\"
+
+2. Arquivo sem placeholders:
+   - source: "C:\\Caminho\\Origem\\subpasta\\"
+   - fileName: "file[0-9]+\\.txt"
+   - destination: "A\\"
+
+3. Arquivo com placeholders misturados:
+   - source: "C:\\Caminho\\Origem\\{{ano}}\\subpasta\\"
+   - fileName: "file_{{nomeMes}}_[0-9]+\\.txt"
+   - destination: "{{numeroMes}}_{{nomeMes}}\\"
+
+- O campo `fileName` permite o uso de expressões regulares para encontrar arquivos correspondentes.
+- Os placeholders disponíveis para uso em `source`, `fileName` e `destination` são: {{ano}}, {{numeroMes}}, {{nomeMes}}, {{dia}}, {{hora}}, {{minuto}}, {{segundo}}, {{nomeArquivo}}.
+
 
 Certifique-se de fornecer os caminhos corretos para as pastas e arquivos no arquivo config.json antes de executar o script.
 
+#### Exemplo config.json:
 ```
 {
   "rootPath": "C:\\caminho\\para\\pasta\\raiz\\",
@@ -44,7 +73,8 @@ Certifique-se de fornecer os caminhos corretos para as pastas e arquivos no arqu
   "subFolders": [
     "Subpasta1",
     "Subpasta2",
-    "Subpasta3"
+    "Subpasta3",
+    "Subpasta4"
   ],
   "filesCopy": [
     {
@@ -61,6 +91,11 @@ Certifique-se de fornecer os caminhos corretos para as pastas e arquivos no arqu
       "source": "C:\\caminho\\para\\arquivos\\",
       "fileName": "arquivo3.txt",
       "destination": "Subpasta3\\"
+    },
+    {
+      "source": "C:\\caminho\\para\\arquivos\\PASTA {{ano}}\\{{numeroMes}}_{{nomeMes}}\\",
+      "fileName": "{{dia}}.*.mp4",
+      "destination": "Subpasta4\\"
     }
   ]
 }
