@@ -137,7 +137,7 @@ def main():
     # Configura o logging
     log_filename = 'log.txt'
     log_handler = logging.handlers.RotatingFileHandler(
-        log_filename, maxBytes=10 * 1024 * 1024, backupCount=10)
+        log_filename, mode='a', maxBytes=10 * 1024 * 1024, backupCount=10, encoding='utf-8')
     log_formatter = logging.Formatter(
         '%(asctime)s [%(funcName)s]:[%(levelname)s] - %(message)s',
         datefmt='%Y%m%d-%H:%M:%S')
