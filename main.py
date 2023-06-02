@@ -10,14 +10,20 @@ import logging.handlers
 import time
 
 
-def copy_files(source_path, destination_path):
-    """
-    Copia um arquivo de origem para o destino.
+def wait_for_user_response():
+    start_time = time.time()
+    while True:
+        logging.info(f'waiting->{start_time}')
+        if time.time() - start_time >= 30:
+            return False
+        user_input = input('Deseja prosseguir e sobrescrever o conteúdo da pasta? (S/N) ').lower()
+        if user_input == 's':
+            return True
+        elif user_input == 'n':
+            return False
+        time.sleep(1)
 
-    Args:
-        source_path (str): Caminho do arquivo de origem.
-        destination_path (str): Caminho de destino do arquivo.
-    """
+def copy_files(source_path, destination_path):
     try:
         shutil.copy2(source_path, destination_path)
         logging.info(f'Arquivo {source_path} copiado para {destination_path}')
@@ -26,17 +32,14 @@ def copy_files(source_path, destination_path):
 
 
 def copy_config_files(root_path, config):
-    """
-    Copia os arquivos listados no arquivo de configuração.
-
-    Args:
-        root_path (str): Caminho da pasta raiz.
-        config (dict): Configurações do script.
-    """
     for entry in config['filesCopy']:
         source_path = format_path(entry['source'], config)
         destination_path = format_path(entry['destination'], config)
         file_name = format_file_name(entry['fileName'], config)
+
+        if file_name is None:
+            logging.warning('Padrão de nome de arquivo não definido. Ignorando a cópia.')
+            continue
 
         source_files = find_files_with_regex(source_path, file_name)
         for file_path in source_files:
@@ -45,13 +48,6 @@ def copy_config_files(root_path, config):
 
 
 def create_subfolders(root_path, subfolders):
-    """
-    Cria as subpastas no caminho especificado.
-
-    Args:
-        root_path (str): Caminho da pasta raiz.
-        subfolders (list): Lista de nomes de subpastas a serem criadas.
-    """
     for subfolder in subfolders:
         subfolder_path = os.path.join(root_path, subfolder)
         os.makedirs(subfolder_path, exist_ok=True)
@@ -59,16 +55,6 @@ def create_subfolders(root_path, subfolders):
 
 
 def format_path(path, config):
-    """
-    Formata o caminho substituindo os placeholders pelos valores correspondentes.
-
-    Args:
-        path (str): Caminho a ser formatado.
-        config (dict): Configurações do script.
-
-    Returns:
-        str: Caminho formatado.
-    """
     now = datetime.now()
     placeholders = {
         '{{ano}}': now.year,
@@ -86,16 +72,6 @@ def format_path(path, config):
 
 
 def format_file_name(file_name, config):
-    """
-    Formata o nome do arquivo substituindo os placeholders pelos valores correspondentes.
-
-    Args:
-        file_name (str): Nome do arquivo a ser formatado.
-        config (dict): Configurações do script.
-
-    Returns:
-        str: Nome do arquivo formatado.
-    """
     now = datetime.now()
     placeholders = {
         '{{ano}}': now.year,
@@ -107,45 +83,29 @@ def format_file_name(file_name, config):
         '{{segundo}}': f'{now.second:02d}',
         '{{nomeArquivo}}': os.path.splitext(os.path.basename(file_name))[0],
     }
-
-    if file_name.startswith('[r]'):
-        file_name_pattern = file_name[3:]  # Remove o prefixo "[r]"
-        matching_files = find_files_with_regex(config['source'], file_name_pattern)
-        if matching_files:
-            file_name = os.path.basename(matching_files[0])
-        else:
-            logging.error(f'Nenhum arquivo encontrado correspondendo ao padrão regex: {file_name_pattern}')
-            return None
-    else:
-        # Usar re.match() para verificar a correspondência de padrões de regex no fileName
-        if not re.match(file_name, os.path.basename(file_name)):
-            logging.error(f'O fileName "{file_name}" não corresponde ao nome do arquivo: {os.path.basename(file_name)}')
-            return None
-
     for placeholder, value in placeholders.items():
         file_name = file_name.replace(placeholder, str(value))
+
     logging.info(f'Nome do arquivo formatado: {file_name}')
     return file_name
 
 
 def find_files_with_regex(source_path, file_name_pattern):
-    """
-    Encontra os arquivos que correspondem ao padrão de nome de arquivo usando expressões regulares.
-
-    Args:
-        source_path (str): Caminho da pasta de origem.
-        file_name_pattern (str): Padrão do nome do arquivo usando expressões regulares.
-
-    Returns:
-        list: Lista de caminhos dos arquivos correspondentes.
-    """
     try:
         matching_files = []
-        escaped_file_name_pattern = re.escape(file_name_pattern)
         for file_name in os.listdir(source_path):
-            if re.match(escaped_file_name_pattern, file_name):
-                file_path = os.path.join(source_path, file_name)
-                matching_files.append(file_path)
+            if file_name_pattern.startswith('[r]'):
+                regex_pattern = file_name_pattern[3:]
+                if re.match(regex_pattern, file_name):
+                    logging.info(f'Aplica regex: {file_name} -> {regex_pattern}')
+                    file_path = os.path.join(source_path, file_name)
+                    matching_files.append(file_path)
+            else:
+                if file_name == file_name_pattern:
+                    logging.info(f'Não aplica regex: {file_name} -> {file_name_pattern}')
+                    file_path = os.path.join(source_path, file_name)
+                    matching_files.append(file_path)
+        logging.info(f'Arquivos encontrados com regex: {matching_files}')
         return matching_files
     except FileNotFoundError as e:
         logging.error(f'Erro ao encontrar o diretório {source_path}: {str(e)}')
@@ -198,8 +158,7 @@ def main():
     # Verifica se a pasta raiz já existe
     if os.path.exists(root_path_normalized):
         logging.info(f'A pasta raiz {root_path_normalized} já existe.')
-        confirm = input(f'Deseja prosseguir e sobrescrever o conteúdo da pasta? (S/N) ')
-        if confirm.lower() != 's':
+        if not wait_for_user_response():
             logging.info('Execução cancelada pelo usuário.')
             return
 
@@ -219,3 +178,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
