@@ -23,6 +23,7 @@ def wait_for_user_response():
             return False
         time.sleep(1)
 
+
 def copy_files(source_path, destination_path):
     try:
         shutil.copy2(source_path, destination_path)
@@ -178,4 +179,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
