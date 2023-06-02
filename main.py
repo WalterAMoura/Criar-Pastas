@@ -5,6 +5,8 @@ from datetime import datetime
 from unidecode import unidecode
 import re
 import locale
+import logging
+import logging.handlers
 import time
 
 def copy_files(source_path, destination_path):
@@ -17,9 +19,9 @@ def copy_files(source_path, destination_path):
     """
     try:
         shutil.copy2(source_path, destination_path)
-        print(f'Arquivo {source_path} copiado para {destination_path}')
+        logging.info(f'Arquivo {source_path} copiado para {destination_path}')
     except Exception as e:
-        print(f'Erro ao copiar o arquivo {source_path}: {str(e)}')
+        logging.error(f'Erro ao copiar o arquivo {source_path}: {str(e)}')
 
 def copy_config_files(root_path, config):
     """
@@ -50,6 +52,7 @@ def create_subfolders(root_path, subfolders):
     for subfolder in subfolders:
         subfolder_path = os.path.join(root_path, subfolder)
         os.makedirs(subfolder_path, exist_ok=True)
+        logging.info(f'Criada subpasta: {subfolder_path}')
 
 def format_path(path, config):
     """
@@ -74,6 +77,7 @@ def format_path(path, config):
     }
     for placeholder, value in placeholders.items():
         path = path.replace(placeholder, str(value))
+    logging.info(f'Caminho formatado: {path}')
     return path
 
 def format_file_name(file_name, config):
@@ -100,6 +104,7 @@ def format_file_name(file_name, config):
     }
     for placeholder, value in placeholders.items():
         file_name = file_name.replace(placeholder, str(value))
+    logging.info(f'Nome do arquivo formatado: {file_name}')
     return file_name
 
 def find_files_with_regex(source_path, file_name_pattern):
@@ -115,42 +120,38 @@ def find_files_with_regex(source_path, file_name_pattern):
     """
     try:
         matching_files = []
+        escaped_file_name_pattern = re.escape(file_name_pattern)
         for file_name in os.listdir(source_path):
-            if re.match(file_name_pattern, file_name):
+            if re.match(escaped_file_name_pattern, file_name):
                 file_path = os.path.join(source_path, file_name)
                 matching_files.append(file_path)
         return matching_files
     except FileNotFoundError as e:
-        print(f'Erro ao encontrar o diretório {source_path}: {str(e)}')
+        logging.error(f'Erro ao encontrar o diretório {source_path}: {str(e)}')
         return []
-
-def confirm_execution():
-    """
-    Solicita a confirmação do usuário para prosseguir com a execução.
-
-    Returns:
-        bool: True se a execução deve continuar, False caso contrário.
-    """
-    print('A pasta raiz já existe. Deseja continuar? (S/N)')
-    start_time = time.time()
-    while True:
-        answer = input()
-        elapsed_time = time.time() - start_time
-        if answer.upper() == 'S':
-            return True
-        elif answer.upper() == 'N':
-            return False
-        elif elapsed_time >= 30:
-            print('Tempo limite excedido. A execução será encerrada.')
-            return False
 
 def main():
     # Define o idioma para o formato de data em português
     locale.setlocale(locale.LC_ALL, 'pt_BR.utf-8')
 
+    # Configura o logging
+    log_filename = 'log.txt'
+    log_handler = logging.handlers.RotatingFileHandler(
+        log_filename, maxBytes=10 * 1024 * 1024, backupCount=10)
+    log_formatter = logging.Formatter(
+        '%(asctime)s [%(funcName)s]:[%(levelname)s] - %(message)s',
+        datefmt='%Y%m%d-%H:%M:%S')
+    log_handler.setFormatter(log_formatter)
+    logging.root.addHandler(log_handler)
+    logging.root.setLevel(logging.INFO)
+
+    # Log de início do script
+    logging.info('--- Início do script ---')
+
     # Obtém a data atual
     now = datetime.now()
     formatted_date = now.strftime('%A %d DE %B %Y').upper()
+    logging.info(f'Data atual: {formatted_date}')
 
     # Lê as configurações do arquivo config.json
     config_path = os.path.join(os.path.dirname(__file__), 'config.json')
@@ -161,7 +162,8 @@ def main():
     weekday = now.strftime('%a').lower()
     weekday_name_complete = now.strftime('%A').upper()
     if weekday not in config['dayOfExecution']:
-        print(f'O script não está configurado para ser executado no dia: {weekday_name_complete}.')
+        logging.info(f'O script não está configurado para ser executado no dia: {weekday_name_complete}.')
+        logging.info('Execução cancelada.')
         return
 
     # Obtém o caminho da pasta raiz a partir do arquivo de configuração
@@ -171,25 +173,26 @@ def main():
     # Remove a acentuação do nome da pasta raiz
     root_path_normalized = unidecode(root_path)
 
+    # Verifica se a pasta raiz já existe
     if os.path.exists(root_path_normalized):
-        if confirm_execution():
-            # Cria as subpastas
-            create_subfolders(root_path_normalized, config['subFolders'])
+        logging.info(f'A pasta raiz {root_path_normalized} já existe.')
+        confirm = input(f'Deseja prosseguir e sobrescrever o conteúdo da pasta? (S/N) ')
+        if confirm.lower() != 's':
+            logging.info('Execução cancelada pelo usuário.')
+            return
 
-            # Copia os arquivos de configuração
-            copy_config_files(root_path_normalized, config)
+    # Cria a pasta raiz
+    os.makedirs(root_path_normalized, exist_ok=True)
+    logging.info(f'Criada pasta raiz: {root_path_normalized}')
 
-            print('Estrutura de pastas criada com sucesso!')
-        else:
-            print('Execução cancelada pelo usuário.')
-    else:
-        # Cria as subpastas
-        create_subfolders(root_path_normalized, config['subFolders'])
+    # Cria as subpastas
+    create_subfolders(root_path_normalized, config['subFolders'])
 
-        # Copia os arquivos de configuração
-        copy_config_files(root_path_normalized, config)
+    # Copia os arquivos de configuração
+    copy_config_files(root_path_normalized, config)
 
-        print('Estrutura de pastas criada com sucesso!')
+    # Log de finalização do script
+    logging.info('--- Fim do script ---')
 
 if __name__ == '__main__':
     main()
