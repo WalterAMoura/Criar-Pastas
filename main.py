@@ -9,6 +9,7 @@ import logging
 import logging.handlers
 import time
 
+
 def copy_files(source_path, destination_path):
     """
     Copia um arquivo de origem para o destino.
@@ -22,6 +23,7 @@ def copy_files(source_path, destination_path):
         logging.info(f'Arquivo {source_path} copiado para {destination_path}')
     except Exception as e:
         logging.error(f'Erro ao copiar o arquivo {source_path}: {str(e)}')
+
 
 def copy_config_files(root_path, config):
     """
@@ -41,6 +43,7 @@ def copy_config_files(root_path, config):
             dest_file_path = os.path.join(root_path, destination_path, os.path.basename(file_path))
             copy_files(file_path, dest_file_path)
 
+
 def create_subfolders(root_path, subfolders):
     """
     Cria as subpastas no caminho especificado.
@@ -53,6 +56,7 @@ def create_subfolders(root_path, subfolders):
         subfolder_path = os.path.join(root_path, subfolder)
         os.makedirs(subfolder_path, exist_ok=True)
         logging.info(f'Criada subpasta: {subfolder_path}')
+
 
 def format_path(path, config):
     """
@@ -80,6 +84,7 @@ def format_path(path, config):
     logging.info(f'Caminho formatado: {path}')
     return path
 
+
 def format_file_name(file_name, config):
     """
     Formata o nome do arquivo substituindo os placeholders pelos valores correspondentes.
@@ -102,10 +107,26 @@ def format_file_name(file_name, config):
         '{{segundo}}': f'{now.second:02d}',
         '{{nomeArquivo}}': os.path.splitext(os.path.basename(file_name))[0],
     }
+
+    if file_name.startswith('[r]'):
+        file_name_pattern = file_name[3:]  # Remove o prefixo "[r]"
+        matching_files = find_files_with_regex(config['source'], file_name_pattern)
+        if matching_files:
+            file_name = os.path.basename(matching_files[0])
+        else:
+            logging.error(f'Nenhum arquivo encontrado correspondendo ao padrão regex: {file_name_pattern}')
+            return None
+    else:
+        # Usar re.match() para verificar a correspondência de padrões de regex no fileName
+        if not re.match(file_name, os.path.basename(file_name)):
+            logging.error(f'O fileName "{file_name}" não corresponde ao nome do arquivo: {os.path.basename(file_name)}')
+            return None
+
     for placeholder, value in placeholders.items():
         file_name = file_name.replace(placeholder, str(value))
     logging.info(f'Nome do arquivo formatado: {file_name}')
     return file_name
+
 
 def find_files_with_regex(source_path, file_name_pattern):
     """
@@ -129,6 +150,7 @@ def find_files_with_regex(source_path, file_name_pattern):
     except FileNotFoundError as e:
         logging.error(f'Erro ao encontrar o diretório {source_path}: {str(e)}')
         return []
+
 
 def main():
     # Define o idioma para o formato de data em português
@@ -193,6 +215,7 @@ def main():
 
     # Log de finalização do script
     logging.info('--- Fim do script ---')
+
 
 if __name__ == '__main__':
     main()
