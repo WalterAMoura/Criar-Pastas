@@ -8,6 +8,7 @@ import locale
 import logging
 import logging.handlers
 import time
+import pytube
 
 
 def wait_for_user_response():
@@ -22,7 +23,6 @@ def wait_for_user_response():
         elif user_input == 'n':
             return False
         time.sleep(1)
-
 
 
 def copy_files(source_path, destination_path):
@@ -114,6 +114,22 @@ def find_files_with_regex(source_path, file_name_pattern):
         return []
 
 
+def download_youtube_videos(config):
+    for entry in config['ytDownloads']:
+        channel_url = entry['channelUrl']
+        video_title = format_file_name(entry['videoTitle'], config)
+        source_path = format_path(entry['source'], config)
+        destination_path = format_path(entry['destination'], config)
+
+        youtube = pytube.YouTube(channel_url)
+        video = youtube.search(video_title)[0]
+        video_path = os.path.join(source_path, f"{video.title}.mp4")
+        video.download(source_path)
+        dest_file_path = os.path.join(config['rootPath'], destination_path, f"{video.title}.mp4")
+        copy_files(video_path, dest_file_path)
+        logging.info(f'Vídeo do YouTube "{video.title}" baixado e copiado para "{dest_file_path}".')
+
+
 def main():
     # Define o idioma para o formato de data em português
     locale.setlocale(locale.LC_ALL, 'pt_BR.utf-8')
@@ -173,6 +189,9 @@ def main():
 
     # Copia os arquivos de configuração
     copy_config_files(root_path_normalized, config)
+
+    # Baixa videos do youtube
+    download_youtube_videos(config)
 
     # Log de finalização do script
     logging.info('--- Fim do script ---')
