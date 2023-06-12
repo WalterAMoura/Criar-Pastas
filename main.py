@@ -24,6 +24,7 @@ def wait_for_user_response():
         time.sleep(1)
 
 
+
 def copy_files(source_path, destination_path):
     try:
         shutil.copy2(source_path, destination_path)
