@@ -8,7 +8,8 @@ import locale
 import logging
 import logging.handlers
 import time
-import pytube
+from pytube import Search
+from pytube import YouTube
 
 
 def wait_for_user_response():
@@ -114,23 +115,35 @@ def find_files_with_regex(source_path, file_name_pattern):
         return []
 
 
-def download_youtube_videos(config):
+def download_youtube_videos(root_path_normalized, config):
     for entry in config['ytDownloads']:
-        channel_url = entry['channelUrl']
         video_title = format_file_name(entry['videoTitle'], config)
-        source_path = format_path(entry['source'], config)
+        root_path = root_path_normalized
         destination_path = format_path(entry['destination'], config)
+        try:
+            videos = Search(video_title)
+            results = [i.video_id for i in videos.results if i.title == video_title]
+            if len(results) > 0:
+                try:
+                    logging.info(f'ID_VIDEO -> "{results[0]}".')
+                    url = "https://www.youtube.com/watch?v=" + results[0]
+                    logging.info(f'URL_DOWNLOAD -> "{url}".')
+                    youtube = YouTube(url)
+                    video = youtube.streams.get_highest_resolution()
 
-        youtube = pytube.YouTube(channel_url)
-        video = youtube.search(video_title)[0]
-        video_path = os.path.join(source_path, f"{video.title}.mp4")
-        video.download(source_path)
-        dest_file_path = os.path.join(config['rootPath'], destination_path, f"{video.title}.mp4")
-        copy_files(video_path, dest_file_path)
-        logging.info(f'Vídeo do YouTube "{video.title}" baixado e copiado para "{dest_file_path}".')
+                    dest_file_path = os.path.join(root_path, destination_path)
+                    video.download(output_path=dest_file_path)
+                    logging.info(f'Vídeo do YouTube "{video.title}" baixado e copiado para "{dest_file_path}".')
+                except Exception as e:
+                    logging.error(f'Erro ao realizar download do video {video_title}: {str(e)}')
+            else:
+                logging.warning(f'Video do YouTube "{video_title}" não foi encontrado.')
+        except Exception as e:
+            logging.error(f'Erro ao realizar download do video {video_title}: {str(e)}')
 
 
 def main():
+
     # Define o idioma para o formato de data em português
     locale.setlocale(locale.LC_ALL, 'pt_BR.utf-8')
 
@@ -191,7 +204,7 @@ def main():
     copy_config_files(root_path_normalized, config)
 
     # Baixa videos do youtube
-    download_youtube_videos(config)
+    download_youtube_videos(root_path_normalized, config)
 
     # Log de finalização do script
     logging.info('--- Fim do script ---')

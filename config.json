@@ -31,9 +31,7 @@
   ],
   "ytDownloads" : [
     {
-      "channelUrl" : "https://www.youtube.com/@daniellocutor",
       "videoTitle" : "Informativo Mundial das Missões | {{dia}} {{nomeMes}} {{ano}}",
-      "source": "C:\\caminho\\para\\arquivos\\PASTA {{ano}}\\{{numeroMes}}_{{nomeMes}}\\",
       "destination": "Subpasta4\\"
 
     }

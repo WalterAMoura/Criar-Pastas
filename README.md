@@ -28,21 +28,28 @@ pip install unidecode
 
 O arquivo config.json contém as configurações para o script. Ele deve estar localizado no mesmo diretório do script (main.py). O arquivo config.json possui a seguinte estrutura:
 
-| Campo            | Descrição                                          | Tipo     | Exemplo                                                      |
-|------------------|----------------------------------------------------|----------|--------------------------------------------------------------|
-| rootPath         | Caminho raiz onde as pastas serão criadas           | String   | "C:\\Users\\usuario\\Desktop\\"                             |
-| dayOfExecution   | Dias da semana em que o script pode ser executado   | Lista    | ["dom", "qua", "sab"]                                       |
-| subFolders       | Lista de subpastas a serem criadas                  | Lista    | ["A", "B", "C"]                                             |
-| filesCopy        | Lista de arquivos a serem copiados                  | Lista    | Veja a tabela de arquivos a serem copiados abaixo            |
+| Campo            | Descrição                                         | Tipo     | Suporte Placeholders | Suporte Regex | Exemplo                                           |
+|------------------|---------------------------------------------------|----------|----------------------|---------------|----------------------------------------------------|
+| rootPath         | Caminho raiz onde as pastas serão criadas         | String   | false                | false         |"C:\\Users\\usuario\\Desktop\\"                    |
+| dayOfExecution   | Dias da semana em que o script pode ser executado | Lista    | false                | false         |["dom", "qua", "sab"]                              |
+| subFolders       | Lista de subpastas a serem criadas                | Lista    | false                | false         |["A", "B", "C"]                                    |
+| filesCopy        | Lista de arquivos a serem copiados                | Lista    | -                    | -             |Veja a tabela 1 de arquivos a serem copiados abaixo |
+| ytDownloads        | Lista de arquivos a serem baixados do YouTube     | Lista    | -                  | -             | Veja a tabela 2 de arquivos a serem copiados abaixo |
 
-### Tabela de arquivos a serem copiados:
+### Tabela 1 de arquivos a serem copiados:
 
-| Campo       | Descrição                                  | Tipo   | Exemplo com Placeholders                      | Exemplo sem Placeholders                           |
-|-------------|--------------------------------------------|--------|-----------------------------------------------|---------------------------------------------------|
-| source      | Caminho da pasta de origem dos arquivos    | String | "C:\\Caminho\\Origem\\{{ano}}\\{{nomeMes}}\\" | "C:\\Caminho\\Origem\\subpasta\\"                  |
-| fileName    | Padrão de nome do arquivo usando regex     | String | "[r]{{dia}}_[A-Za-z]+\\.mp4"                  | "file[0-9]+\\.txt"                                |
-| destination | Subpasta de destino para o arquivo         | String | "{{numeroMes}}_{{nomeMes}}\\"                 | "A\\"                                             |
+| Campo       | Descrição                                  | Tipo   | Suporte Placeholders | Suporte Regex |Exemplo com Placeholders                      | Exemplo sem Placeholders                           |
+|-------------|--------------------------------------------|--------|----------------------|---------------|-----------------------------------------------|---------------------------------------------------|
+| source      | Caminho da pasta de origem dos arquivos    | String | true                 | false         |"C:\\Caminho\\Origem\\{{ano}}\\{{nomeMes}}\\" | "C:\\Caminho\\Origem\\subpasta\\"                  |
+| fileName    | Padrão de nome do arquivo usando regex     | String | true                 | true          |"[r]{{dia}}_[A-Za-z]+\\.mp4"                  | "file[0-9]+\\.txt"                                |
+| destination | Subpasta de destino para o arquivo         | String | true                 | false         |"{{numeroMes}}_{{nomeMes}}\\"                 | "A\\"                                             |
 
+### Tabela 2 de arquivos a serem copiados:
+
+| Campo       | Descrição                          | Tipo   | Suporte Placeholders | Suporte Regex | Exemplo com Placeholders                        | Exemplo sem Placeholders            |
+|-------------|------------------------------------|--------|----------------------|---------------|-------------------------------------------------|-------------------------------------|
+| videoTitle      | Nome do video a ser baixado        | String | true                 | false         | "Video Download \| {{dia}} {{nomeMes}} {{ano}}" | "Video Download \| 01 Janeiro 2001" |
+| destination | Subpasta de destino para o arquivo | String | true                 | false         | "{{numeroMes}}_{{nomeMes}}\\"                   | "A\\"                               |
 
 ### Placeholders suportados
 
@@ -136,6 +143,13 @@ Certifique-se de fornecer os caminhos corretos para as pastas e arquivos no arqu
       "fileName": "[r]{{dia}}.*.mp4",
       "destination": "Subpasta4\\"
     }
+  ],
+  "ytDownloads" : [
+    {
+      "videoTitle" : "Video Download | 01 Janeiro 2001",
+      "destination": "Subpasta4\\"
+
+    }
   ]
 }
 
@@ -168,6 +182,13 @@ Certifique-se de fornecer os caminhos corretos para as pastas e arquivos no arqu
       "fileName": "[r][w]relatorio\\.xlsx",
       "destination": "{{numeroMes}}_{{nomeMes}}\\"
     }
+  ],
+  "ytDownloads" : [
+    {
+      "videoTitle" : "Informativo Mundial das Missões | {{dia}} {{nomeMes}} {{ano}}",
+      "destination": "Subpasta4\\"
+
+    }
   ]
 }
 
@@ -192,7 +213,7 @@ cd /caminho/para/o/diretorio
 
 * Compile o script usando o PyInstaller:
 ```
-ppyinstaller --onefile --add-data "config.json;." main.py
+pyinstaller  --add-data "config.json;." --onedir main.py
 ```
  
 __Isso criará um executável na pasta dist com o nome nome_do_script.exe (no Windows) ou nome_do_script (no Linux/macOS)..__
