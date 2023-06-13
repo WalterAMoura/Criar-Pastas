@@ -14,6 +14,7 @@ Certifique-se de ter o Python 3 instalado em seu ambiente de execução.
 
 ```
 pip install unidecode
+pip install pytube3
 ```
 
 4. Certifique-se de ter um arquivo JSON de configuração (config.json) preparado com as informações corretas. Veja a seção abaixo para detalhes sobre o arquivo config.json.
