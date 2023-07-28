@@ -122,15 +122,18 @@ def download_youtube_videos(root_path_normalized, config):
         destination_path = format_path(entry['destination'], config)
         try:
             videos = Search(video_title)
-            results = [i.video_id for i in videos.results if i.title == video_title]
+            results = [i.video_id for i in videos.results if i.title.upper() == video_title.upper()]
             if len(results) > 0:
                 try:
                     logging.info(f'ID_VIDEO -> "{results[0]}".')
-                    url = "https://www.youtube.com/watch?v=" + results[0]
+                    url = "https://youtube.com/watch?v=" + results[0]
                     logging.info(f'URL_DOWNLOAD -> "{url}".')
                     youtube = YouTube(url)
+                    logging.info(f'Retorno YouTube -> "{youtube}')
+                    # video = youtube.streams.first()
+                    # video = youtube.streams.get_by_itag(1)
                     video = youtube.streams.get_highest_resolution()
-
+                    logging.info(f'"{video}"')
                     dest_file_path = os.path.join(root_path, destination_path)
                     video.download(output_path=dest_file_path)
                     logging.info(f'Vídeo do YouTube "{video.title}" baixado e copiado para "{dest_file_path}".')

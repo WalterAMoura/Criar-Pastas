@@ -186,7 +186,7 @@ Certifique-se de fornecer os caminhos corretos para as pastas e arquivos no arqu
   ],
   "ytDownloads" : [
     {
-      "videoTitle" : "Video Download | {{dia}} {{nomeMes}} {{ano}}",
+      "videoTitle" : "Video Downloadta | {{dia}} {{nomeMes}} {{ano}}",
       "destination": "Subpasta4\\"
 
     }
