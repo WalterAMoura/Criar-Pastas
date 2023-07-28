@@ -216,7 +216,10 @@ cd /caminho/para/o/diretorio
 ```
 pyinstaller  --add-data "config.json;." --onedir main.py
 ```
- 
+* Ou compile o comando abaixo:
+```
+python -m PyInstaller --hidden-import pytube.Search  --add-data "config.json;." --onedir main.py
+```
 __Isso criará um executável na pasta dist com o nome nome_do_script.exe (no Windows) ou nome_do_script (no Linux/macOS)..__
 
 __Agora você pode executar o arquivo main.exe (no Windows) ou main (no Linux/macOS), e o programa utilizará as configurações do arquivo config.json para criar a estrutura de pastas e copiar os arquivos conforme especificado.__
