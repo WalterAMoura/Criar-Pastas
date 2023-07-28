@@ -216,7 +216,7 @@ cd /caminho/para/o/diretorio
 ```
 pyinstaller  --add-data "config.json;." --onedir main.py
 ```
-* Ou compile o comando abaixo:
+* Ou compile com o comando abaixo:
 ```
 python -m PyInstaller --hidden-import pytube.Search  --add-data "config.json;." --onedir main.py
 ```
