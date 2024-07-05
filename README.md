@@ -152,8 +152,13 @@ Certifique-se de fornecer os caminhos corretos para as pastas e arquivos no arqu
   "ytDownloads" : [
     {
       "videoTitle" : "Video Download | 01 Janeiro 2001",
-      "destination": "Subpasta4\\"
-
+      "destination": "Subpasta4\\",
+      "match": true
+    },
+    {
+      "videoTitle" : "Video Download",
+      "destination": "Subpasta4\\",
+      "match": false
     }
   ]
 }
@@ -190,9 +195,14 @@ Certifique-se de fornecer os caminhos corretos para as pastas e arquivos no arqu
   ],
   "ytDownloads" : [
     {
-      "videoTitle" : "Video Downloadta | {{dia}} {{nomeMes}} {{ano}}",
-      "destination": "Subpasta4\\"
-
+      "videoTitle" : "Video Download | {{dia}} {{nomeMes}} {{ano}}",
+      "destination": "Subpasta4\\",
+      "match": true
+    },
+    {
+      "videoTitle" : "Video Download",
+      "destination": "Subpasta4\\",
+      "match": false
     }
   ]
 }
