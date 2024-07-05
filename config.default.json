@@ -1,0 +1,39 @@
+{
+  "rootPath": "C:\\caminho\\para\\pasta\\raiz\\",
+  "dayOfExecution": ["seg", "qua", "sex"],
+  "subFolders": [
+    "Subpasta1",
+    "Subpasta2",
+    "Subpasta3",
+    "Subpasta4"
+  ],
+  "filesCopy": [
+    {
+      "source": "C:\\caminho\\para\\arquivos\\",
+      "fileName": "arquivo1.txt",
+      "destination": "Subpasta1\\"
+    },
+    {
+      "source": "C:\\caminho\\para\\arquivos\\",
+      "fileName": "arquivo2.txt",
+      "destination": "Subpasta2\\"
+    },
+    {
+      "source": "C:\\caminho\\para\\arquivos\\",
+      "fileName": "arquivo3.txt",
+      "destination": "Subpasta3\\"
+    },
+    {
+      "source": "C:\\caminho\\para\\arquivos\\PASTA {{ano}}\\{{numeroMes}}_{{nomeMes}}\\",
+      "fileName": "{{dia}}.*.mp4",
+      "destination": "Subpasta4\\"
+    }
+  ],
+  "ytDownloads" : [
+    {
+      "videoTitle" : "Informativo Mundial das Miss�es | {{dia}} {{nomeMes}} {{ano}}",
+      "destination": "Subpasta4\\"
+
+    }
+  ]
+}
