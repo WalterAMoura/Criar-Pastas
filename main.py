@@ -80,6 +80,7 @@ def format_file_name(file_name, config):
         '{{ano}}': now.year,
         '{{numeroMes}}': f'{now.month:02d}',
         '{{nomeMes}}': now.strftime('%B').capitalize(),
+        '{{nomeMesReduzido}}' : now.strftime('%b').capitalize(),
         '{{dia}}': f'{now.day:02d}',
         '{{hora}}': f'{now.hour:02d}',
         '{{minuto}}': f'{now.minute:02d}',
@@ -122,7 +123,13 @@ def download_youtube_videos(root_path_normalized, config):
         destination_path = format_path(entry['destination'], config)
         try:
             videos = Search(video_title)
-            results = [i.video_id for i in videos.results if i.title.upper() == video_title.upper()]
+            results = ''
+            if entry['match'] == 1:
+                logging.info(f'Busca pela correspondência exata: {video_title}')
+                results = [i.video_id for i in videos.results if i.title.upper() == video_title.upper()]
+            else:
+                logging.info(f'Busca pela correspondência parcial: {video_title}')
+                results = [i.video_id for i in videos.results if video_title.upper() in i.title.upper()]
             if len(results) > 0:
                 try:
                     logging.info(f'ID_VIDEO -> "{results[0]}".')
