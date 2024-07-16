@@ -209,6 +209,11 @@ Certifique-se de fornecer os caminhos corretos para as pastas e arquivos no arqu
 
 ```
 
+## Instale as dependências do ytb-dlp
+
+https://github.com/yt-dlp/yt-dlp?tab=readme-ov-file#installation
+
+
 ## Compilação para Executável (opcional)
 
 Você pode compilar o script Python em um executável independente usando ferramentas como PyInstaller, cx_Freeze ou Py2exe. Isso permitirá que você execute o script em um ambiente sem a necessidade de ter o Python instalado.
@@ -220,6 +225,7 @@ Você pode compilar o script Python em um executável independente usando ferram
 ```
 pip install pyinstaller
 ```
+
 * Navegue até o diretório onde o seu script Python está localizado:
 
 ```
@@ -230,10 +236,7 @@ cd /caminho/para/o/diretorio
 ```
 pyinstaller  --add-data "config.json;." --onedir main.py
 ```
-* Ou compile com o comando abaixo:
-```
-python -m PyInstaller --hidden-import pytube.Search  --add-data "config.json;." --onedir main.py
-```
+
 __Isso criará um executável na pasta dist com o nome nome_do_script.exe (no Windows) ou nome_do_script (no Linux/macOS)..__
 
 __Agora você pode executar o arquivo main.exe (no Windows) ou main (no Linux/macOS), e o programa utilizará as configurações do arquivo config.json para criar a estrutura de pastas e copiar os arquivos conforme especificado.__
