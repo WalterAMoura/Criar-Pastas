@@ -47,12 +47,12 @@ O arquivo config.json contém as configurações para o script. Ele deve estar l
 
 ### Tabela 2 de arquivos a serem baixados do YouTube:
 
-| Campo        | Descrição                                                                                                                   | Tipo    | Obrigatório | Suporte Placeholders | Suporte Regex | Exemplo com Placeholders                        | Exemplo sem Placeholders            |
-|--------------|-----------------------------------------------------------------------------------------------------------------------------|---------|-------------|----------------------|---------------|-------------------------------------------------|-------------------------------------|
-| videoTitle   | Nome do video a ser baixado                                                                                                 | String  | Sim         | true                 | false                | "Video Download \| {{dia}} {{nomeMes}} {{ano}}" | "Video Download \| 01 Janeiro 2001" |
-| destination  | Subpasta de destino para o arquivo                                                                                          | String  | Sim         | true                 | false                | "{{numeroMes}}_{{nomeMes}}\\"                   | "A\\"                               |
-| match        | Verifica correspondencia do nome arquivo, use 'true' para correspondência exata e use 'false' para **correspondecia parcial | Boolean | Não         | false                | false                | N/A                                             | true                                |
-| channelName  | Nome do canal para buscar o video, informe 'null' caso não queira buscar em um canal especifico                             | [String,null]| Não         | false   | false                | N/A | null |
+| Campo        | Descrição                                                                                                                    | Tipo    | Obrigatório | Suporte Placeholders | Suporte Regex | Exemplo com Placeholders                        | Exemplo sem Placeholders            |
+|--------------|------------------------------------------------------------------------------------------------------------------------------|---------|-------------|----------------------|---------------|-------------------------------------------------|-------------------------------------|
+| videoTitle   | Nome do video a ser baixado                                                                                                  | String  | Sim         | true                 | false                | "Video Download \| {{dia}} {{nomeMes}} {{ano}}" | "Video Download \| 01 Janeiro 2001" |
+| destination  | Subpasta de destino para o arquivo                                                                                           | String  | Sim         | true                 | false                | "{{numeroMes}}_{{nomeMes}}\\"                   | "A\\"                               |
+| match        | Verifica correspondencia do nome arquivo, use 'true' para correspondência exata e use 'false' para **correspondecia parcial  | Boolean | Não         | false                | false                | N/A                                             | true                                |
+| channelName  | Nome do canal para buscar o video, informe 'null' caso não queira buscar em um canal especifico [Temporariamente desativado] | [String,null]| Não         | false   | false                | N/A | null |
 > ** A busca parcial, irá fazer o download do primeiro item que for encontrado com parte do nome especificado.
 
 ### Placeholders suportados
