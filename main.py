@@ -168,7 +168,7 @@ def download_youtube_videos_v2(root_path_normalized, config):
         root_path = root_path_normalized
         destination_path = format_path(entry['destination'], config)
         # busca video pelo canal e titulo
-        search_command = f'yt-dlp "ytsearch:{video_title} channel:{channel_name}" --get-id'
+        search_command = f'yt-dlp ytsearch:"{video_title}" --get-id'
         try:
             video_id = subprocess.check_output(search_command, shell=True).decode().strip()
             logging.info(f'ID_VIDEO -> "{video_id}".')

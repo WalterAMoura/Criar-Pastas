@@ -1,6 +1,6 @@
 {
   "rootPath": "C:\\Users\\walte\\Desktop",
-  "dayOfExecution": ["seg", "qua", "sex"],
+  "dayOfExecution": ["seg", "qua", "sáb"],
   "subFolders": ["Subpasta1", "Subpasta2", "Subpasta3", "Subpasta4"],
   "filesCopy": [
     {
@@ -22,7 +22,7 @@
       "channelName": null
     },
     {
-      "videoTitle": "Provai e Vede 2024 (06/{{nomeMesReduzido}})",
+      "videoTitle": "Provai e Vede {{ano}} ({{dia}}/{{nomeMesReduzido}})",
       "destination": "Subpasta3\\",
       "match": false,
       "channelName": "provaievedeoficial"
