@@ -45,25 +45,29 @@ O arquivo config.json contém as configurações para o script. Ele deve estar l
 | fileName    | Padrão de nome do arquivo usando regex     | String | true                 | true          |"[r]{{dia}}_[A-Za-z]+\\.mp4"                  | "file[0-9]+\\.txt"                                |
 | destination | Subpasta de destino para o arquivo         | String | true                 | false         |"{{numeroMes}}_{{nomeMes}}\\"                 | "A\\"                                             |
 
-### Tabela 2 de arquivos a serem copiados:
+### Tabela 2 de arquivos a serem baixados do YouTube:
 
-| Campo       | Descrição                          | Tipo   | Suporte Placeholders | Suporte Regex | Exemplo com Placeholders                        | Exemplo sem Placeholders            |
-|-------------|------------------------------------|--------|----------------------|---------------|-------------------------------------------------|-------------------------------------|
-| videoTitle      | Nome do video a ser baixado        | String | true                 | false         | "Video Download \| {{dia}} {{nomeMes}} {{ano}}" | "Video Download \| 01 Janeiro 2001" |
-| destination | Subpasta de destino para o arquivo | String | true                 | false         | "{{numeroMes}}_{{nomeMes}}\\"                   | "A\\"                               |
+| Campo       | Descrição                                                                                                                   | Tipo    | Suporte Placeholders | Suporte Regex | Exemplo com Placeholders                        | Exemplo sem Placeholders            |
+|-------------|-----------------------------------------------------------------------------------------------------------------------------|---------|----------------------|---------------|-------------------------------------------------|-------------------------------------|
+| videoTitle  | Nome do video a ser baixado                                                                                                 | String  | true                 | false         | "Video Download \| {{dia}} {{nomeMes}} {{ano}}" | "Video Download \| 01 Janeiro 2001" |
+| destination | Subpasta de destino para o arquivo                                                                                          | String  | true                 | false         | "{{numeroMes}}_{{nomeMes}}\\"                   | "A\\"                               |
+| match       | Verifica correspondencia do nome arquivo, use 'true' para correspondência exata e use 'false' para **correspondecia parcial | Boolean | false                | false         | N/A                                             | true                                |
+
+> ** A busca parcial, irá fazer o download do primeiro item que for encontrado com parte do nome especificado.
 
 ### Placeholders suportados
 
-| Placeholder   | Descrição                                      |
-|---------------|------------------------------------------------|
-| {{ano}}       | Ano atual com 4 dígitos                        |
-| {{numeroMes}} | Mês atual com 2 dígitos (preenchido com zero)  |
-| {{nomeMes}}   | Nome do mês atual (inicial maiúscula)          |
-| {{dia}}       | Dia do mês atual com 2 dígitos (preenchido com zero) |
-| {{hora}}      | Hora atual com 2 dígitos (preenchido com zero) |
-| {{minuto}}    | Minuto atual com 2 dígitos (preenchido com zero) |
-| {{segundo}}   | Segundo atual com 2 dígitos (preenchido com zero) |
-| {{nomeArquivo}}| Nome do arquivo original (sem extensão)        |
+| Placeholder         | Descrição                                            |
+|---------------------|------------------------------------------------------|
+| {{ano}}             | Ano atual com 4 dígitos                              |
+| {{numeroMes}}       | Mês atual com 2 dígitos (preenchido com zero)        |
+| {{nomeMes}}         | Nome do mês atual (inicial maiúscula)                |
+| {{nomeMesReduzido}} | Nome do mês atual reduzido (inicial maiúscula)       |
+| {{dia}}             | Dia do mês atual com 2 dígitos (preenchido com zero) |
+| {{hora}}            | Hora atual com 2 dígitos (preenchido com zero)       |
+| {{minuto}}          | Minuto atual com 2 dígitos (preenchido com zero)     |
+| {{segundo}}         | Segundo atual com 2 dígitos (preenchido com zero)    |
+| {{nomeArquivo}}     | Nome do arquivo original (sem extensão)              |
 
 #### Exemplos:
 1. Arquivo com placeholders:
@@ -148,8 +152,13 @@ Certifique-se de fornecer os caminhos corretos para as pastas e arquivos no arqu
   "ytDownloads" : [
     {
       "videoTitle" : "Video Download | 01 Janeiro 2001",
-      "destination": "Subpasta4\\"
-
+      "destination": "Subpasta4\\",
+      "match": true
+    },
+    {
+      "videoTitle" : "Video Download",
+      "destination": "Subpasta4\\",
+      "match": false
     }
   ]
 }
@@ -186,9 +195,14 @@ Certifique-se de fornecer os caminhos corretos para as pastas e arquivos no arqu
   ],
   "ytDownloads" : [
     {
-      "videoTitle" : "Video Downloadta | {{dia}} {{nomeMes}} {{ano}}",
-      "destination": "Subpasta4\\"
-
+      "videoTitle" : "Video Download | {{dia}} {{nomeMes}} {{ano}}",
+      "destination": "Subpasta4\\",
+      "match": true
+    },
+    {
+      "videoTitle" : "Video Download",
+      "destination": "Subpasta4\\",
+      "match": false
     }
   ]
 }
