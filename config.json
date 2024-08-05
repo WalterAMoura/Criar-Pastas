@@ -1,24 +1,31 @@
 {
-  "rootPath": "/Users/walte/Documents/teste/testes-criar-pastas",
-  "dayOfExecution": ["qui"],
-  "subFolders": [
-    "Subpasta1",
-    "Subpasta2",
-    "Subpasta3",
-    "Subpasta4"
-  ],
+  "rootPath": "C:\\Users\\walte\\Desktop",
+  "dayOfExecution": ["seg", "qua", "sáb"],
+  "subFolders": ["Subpasta1", "Subpasta2", "Subpasta3", "Subpasta4"],
   "filesCopy": [
     {
-      "source": "/Users/walte/Downloads",
-      "fileName": "qrcode_iasd-pqregina.com.br.png",
-      "destination": "Subpasta1"
+      "source": "E:\\Projetos\\Igreja\\Músicas\\Amor Vive\\",
+      "fileName": "O Amor Vive - Música Tema Semana Santa.mp3",
+      "destination": "Subpasta1/"
+    },
+    {
+      "source": "E:\\Projetos\\Igreja\\Músicas\\pack-materiais-divulgacao_7me\\Materiais\\Videos-alta_whatsapp\\",
+      "fileName": "Video Divulgação_7ME_ PT.mp4",
+      "destination": "Subpasta1\\"
     }
   ],
-  "ytDownloads" : [
+  "ytDownloads": [
     {
-      "videoTitle" : "Provai e Vede 2024 (06/Jul)",
-      "destination": "Subpasta4"
-
+      "videoTitle": "Informativo Mundial das Missões | 06 {{nomeMes}} {{ano}}",
+      "destination": "Subpasta4\\",
+      "match": true,
+      "channelName": null
+    },
+    {
+      "videoTitle": "Provai e Vede {{ano}} ({{dia}}/{{nomeMesReduzido}})",
+      "destination": "Subpasta3\\",
+      "match": false,
+      "channelName": "provaievedeoficial"
     }
   ]
 }

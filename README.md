@@ -14,7 +14,7 @@ Certifique-se de ter o Python 3 instalado em seu ambiente de execução.
 
 ```
 pip install unidecode
-pip install pytube3
+pip install yt-dlp
 ```
 
 4. Certifique-se de ter um arquivo JSON de configuração (config.json) preparado com as informações corretas. Veja a seção abaixo para detalhes sobre o arquivo config.json.
@@ -39,20 +39,20 @@ O arquivo config.json contém as configurações para o script. Ele deve estar l
 
 ### Tabela 1 de arquivos a serem copiados:
 
-| Campo       | Descrição                                  | Tipo   | Suporte Placeholders | Suporte Regex |Exemplo com Placeholders                      | Exemplo sem Placeholders                           |
-|-------------|--------------------------------------------|--------|----------------------|---------------|-----------------------------------------------|---------------------------------------------------|
-| source      | Caminho da pasta de origem dos arquivos    | String | true                 | false         |"C:\\Caminho\\Origem\\{{ano}}\\{{nomeMes}}\\" | "C:\\Caminho\\Origem\\subpasta\\"                  |
-| fileName    | Padrão de nome do arquivo usando regex     | String | true                 | true          |"[r]{{dia}}_[A-Za-z]+\\.mp4"                  | "file[0-9]+\\.txt"                                |
-| destination | Subpasta de destino para o arquivo         | String | true                 | false         |"{{numeroMes}}_{{nomeMes}}\\"                 | "A\\"                                             |
+| Campo       | Descrição                                  | Tipo   | Obrigatório | Suporte Placeholders | Suporte Regex |Exemplo com Placeholders                      | Exemplo sem Placeholders                           |
+|-------------|--------------------------------------------|--------|-------------|----------------------|---------------|-----------------------------------------------|---------------------------------------------------|
+| source      | Caminho da pasta de origem dos arquivos    | String | Sim         | true                 | false                |"C:\\Caminho\\Origem\\{{ano}}\\{{nomeMes}}\\" | "C:\\Caminho\\Origem\\subpasta\\"                  |
+| fileName    | Padrão de nome do arquivo usando regex     | String | Sim         | true                 | true                 |"[r]{{dia}}_[A-Za-z]+\\.mp4"                  | "file[0-9]+\\.txt"                                |
+| destination | Subpasta de destino para o arquivo         | String | Sim         | true                 | false                |"{{numeroMes}}_{{nomeMes}}\\"                 | "A\\"                                             |
 
 ### Tabela 2 de arquivos a serem baixados do YouTube:
 
-| Campo       | Descrição                                                                                                                   | Tipo    | Suporte Placeholders | Suporte Regex | Exemplo com Placeholders                        | Exemplo sem Placeholders            |
-|-------------|-----------------------------------------------------------------------------------------------------------------------------|---------|----------------------|---------------|-------------------------------------------------|-------------------------------------|
-| videoTitle  | Nome do video a ser baixado                                                                                                 | String  | true                 | false         | "Video Download \| {{dia}} {{nomeMes}} {{ano}}" | "Video Download \| 01 Janeiro 2001" |
-| destination | Subpasta de destino para o arquivo                                                                                          | String  | true                 | false         | "{{numeroMes}}_{{nomeMes}}\\"                   | "A\\"                               |
-| match       | Verifica correspondencia do nome arquivo, use 'true' para correspondência exata e use 'false' para **correspondecia parcial | Boolean | false                | false         | N/A                                             | true                                |
-
+| Campo        | Descrição                                                                                                                    | Tipo    | Obrigatório | Suporte Placeholders | Suporte Regex | Exemplo com Placeholders                        | Exemplo sem Placeholders            |
+|--------------|------------------------------------------------------------------------------------------------------------------------------|---------|-------------|----------------------|---------------|-------------------------------------------------|-------------------------------------|
+| videoTitle   | Nome do video a ser baixado                                                                                                  | String  | Sim         | true                 | false                | "Video Download \| {{dia}} {{nomeMes}} {{ano}}" | "Video Download \| 01 Janeiro 2001" |
+| destination  | Subpasta de destino para o arquivo                                                                                           | String  | Sim         | true                 | false                | "{{numeroMes}}_{{nomeMes}}\\"                   | "A\\"                               |
+| match        | Verifica correspondencia do nome arquivo, use 'true' para correspondência exata e use 'false' para **correspondecia parcial  | Boolean | Não         | false                | false                | N/A                                             | true                                |
+| channelName  | Nome do canal para buscar o video, informe 'null' caso não queira buscar em um canal especifico [Temporariamente desativado] | [String,null]| Não         | false   | false                | N/A | null |
 > ** A busca parcial, irá fazer o download do primeiro item que for encontrado com parte do nome especificado.
 
 ### Placeholders suportados
@@ -158,7 +158,8 @@ Certifique-se de fornecer os caminhos corretos para as pastas e arquivos no arqu
     {
       "videoTitle" : "Video Download",
       "destination": "Subpasta4\\",
-      "match": false
+      "match": false,
+      "channelName" : "nomedocanalaqui"
     }
   ]
 }
@@ -197,17 +198,37 @@ Certifique-se de fornecer os caminhos corretos para as pastas e arquivos no arqu
     {
       "videoTitle" : "Video Download | {{dia}} {{nomeMes}} {{ano}}",
       "destination": "Subpasta4\\",
-      "match": true
+      "match": true,
+      "channelName" : null
     },
     {
       "videoTitle" : "Video Download",
       "destination": "Subpasta4\\",
-      "match": false
+      "match": false,
+      "channelName" : "nomedocanalaqui"
     }
   ]
 }
 
 ```
+
+## Instalação e dependências do ytb-dlp 
+
+### Instalação do FFMPEG
+* [**ffmpeg** and **ffprobe**](https://www.ffmpeg.org) - Required for [merging separate video and audio files](#format-selection), as well as for various [post-processing](#post-processing-options) tasks. License [depends on the build](https://www.ffmpeg.org/legal.html)
+
+    There are bugs in ffmpeg that cause various issues when used alongside yt-dlp. Since ffmpeg is such an important dependency, we provide [custom builds](https://github.com/yt-dlp/FFmpeg-Builds#ffmpeg-static-auto-builds) with patches for some of these issues at [yt-dlp/FFmpeg-Builds](https://github.com/yt-dlp/FFmpeg-Builds). See [the readme](https://github.com/yt-dlp/FFmpeg-Builds#patches-applied) for details on the specific issues solved by these builds
+
+    **Important**: What you need is ffmpeg *binary*, **NOT** [the Python package of the same name](https://pypi.org/project/ffmpeg)
+
+### Instalação windows
+<!-- MANPAGE: BEGIN EXCLUDED SECTION -->
+[![Windows](https://img.shields.io/badge/-Windows_x64-blue.svg?style=for-the-badge&logo=windows)](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe)
+<!-- MANPAGE: END EXCLUDED SECTION -->
+
+<!-- MANPAGE: BEGIN EXCLUDED SECTION -->
+[[Créditos]](https://github.com/yt-dlp)
+<!-- MANPAGE: END EXCLUDED SECTION -->
 
 ## Compilação para Executável (opcional)
 
@@ -220,6 +241,7 @@ Você pode compilar o script Python em um executável independente usando ferram
 ```
 pip install pyinstaller
 ```
+
 * Navegue até o diretório onde o seu script Python está localizado:
 
 ```
@@ -230,10 +252,7 @@ cd /caminho/para/o/diretorio
 ```
 pyinstaller  --add-data "config.json;." --onedir main.py
 ```
-* Ou compile com o comando abaixo:
-```
-python -m PyInstaller --hidden-import pytube.Search  --add-data "config.json;." --onedir main.py
-```
+
 __Isso criará um executável na pasta dist com o nome nome_do_script.exe (no Windows) ou nome_do_script (no Linux/macOS)..__
 
 __Agora você pode executar o arquivo main.exe (no Windows) ou main (no Linux/macOS), e o programa utilizará as configurações do arquivo config.json para criar a estrutura de pastas e copiar os arquivos conforme especificado.__
