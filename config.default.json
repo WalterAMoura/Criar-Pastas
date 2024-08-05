@@ -32,8 +32,9 @@
   "ytDownloads" : [
     {
       "videoTitle" : "Informativo Mundial das Missões | {{dia}} {{nomeMes}} {{ano}}",
-      "destination": "Subpasta4\\"
-
+      "destination": "Subpasta4\\",
+      "match": false,
+      "channelName" : "nomedocanalaqui"
     }
   ]
 }

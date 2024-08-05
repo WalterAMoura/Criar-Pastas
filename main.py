@@ -161,10 +161,8 @@ def download_youtube_videos(root_path_normalized, config):
 def download_youtube_videos_v2(root_path_normalized, config):
     for entry in config['ytDownloads']:
         video_title = format_file_name(entry['videoTitle'], config)
-        # Nome base sanitizado para os arquivos
-        base_filename = sanitize_filename(video_title)
 
-        channel_name = entry['channelName']
+        # channel_name = entry['channelName']
         root_path = root_path_normalized
         destination_path = format_path(entry['destination'], config)
         # busca video pelo canal e titulo
@@ -175,6 +173,18 @@ def download_youtube_videos_v2(root_path_normalized, config):
             if video_id:
                 dest_file_path = os.path.join(root_path, destination_path)
                 url = f"https://youtube.com/watch?v={video_id}"
+
+                # Comando para recuperar o título do video
+                original_title_command_video = f'yt-dlp {url} --get-title'
+                original_title_video = subprocess.check_output(original_title_command_video, shell=True).decode().strip()
+                logging.info(f'ORIGINAL_TITLE_VIDEO -> "{original_title_video}".')
+
+                # Nome base sanitizado para os arquivos
+                if original_title_command_video:
+                    base_filename = sanitize_filename(original_title_video)
+                else:
+                    base_filename = sanitize_filename(video_title)
+
                 # Comando para baixar o vídeo e o áudio separadamente
                 download_command_video = f'yt-dlp -f bestvideo[ext=mp4] -o "{dest_file_path}video.mp4" {url}'
                 download_command_audio = f'yt-dlp -f bestaudio[ext=m4a] -o "{dest_file_path}audio.m4a" {url}'
