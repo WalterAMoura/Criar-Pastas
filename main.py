@@ -60,7 +60,7 @@ def create_subfolders(root_path, subfolders):
 
 def sanitize_filename(filename):
     """Remove ou substitui caracteres inválidos para nomes de arquivos no Windows."""
-    return re.sub(r'[<>:"/\\|?*]', '_', filename)
+    return re.sub(r'[<>:"/\\|?*]', ' ', filename)
 
 
 def format_path(path, config):
@@ -176,7 +176,7 @@ def download_youtube_videos_v2(root_path_normalized, config):
 
                 # Comando para recuperar o título do video
                 original_title_command_video = f'yt-dlp {url} --get-title'
-                original_title_video = subprocess.check_output(original_title_command_video, shell=True).decode().strip()
+                original_title_video = subprocess.check_output(original_title_command_video, shell=True).decode("ISO8859-1").strip()
                 logging.info(f'ORIGINAL_TITLE_VIDEO -> "{original_title_video}".')
 
                 # Nome base sanitizado para os arquivos
